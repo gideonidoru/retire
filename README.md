@@ -35,7 +35,7 @@ A decisions chapter that answers the questions people actually argue about:
 - **Assumptions wrong?** — a stress test: inflation at 4%, growth halved, living to 100 — pass/fail against your goal.
 - **Retire somewhere else?** — all 50 states plus popular expat destinations (Portugal, Mexico, Costa Rica, Thailand…), ranked by what your after-tax income actually *spends like* — state taxes and cost of living together, military exemptions included.
 - **Leave federal service?** — the private-sector salary that breaks even on everything walking away forfeits: remaining accrual years, the match stream, the 1.1% upgrade on banked years, net of FERS withholding.
-- **You died first?** — what the survivor actually keeps: the FERS survivor annuity from your election, SBP if elected (with DIC stacking since the 2023 offset repeal), the Social Security step-up, their own streams, the inherited draw — against the household total, with the gap named.
+- **One of you died first?** — both directions. If you go: what the survivor actually keeps — the FERS survivor annuity from your election, SBP if elected (with DIC stacking since the 2023 offset repeal), the Social Security step-up, their streams, the inherited draw — with the gap named. If they go: the widow's tax trap, quantified — nearly the same income refiled single, with the effective-rate jump shown.
 - **Converted to Roth in the gap?** — fill the 12/22/24% bracket in the years between retirement and Social Security, pay the tax cheap, shrink the RMDs. A directional sketch, labeled as such.
 
 ## What it models
@@ -60,7 +60,7 @@ All figures in **today's dollars** — growth assumptions are "above inflation,"
 
 Every simplification is labeled inline where it applies, with the direction of its error where known. Current salary stands in for high-3 (a conservative floor). The buyback deposit is an estimate until you enter the DFAS figure. VA tables are approximate for 2026. State rates and cost-of-living indexes are coarse estimates. The lifespan figure is a statistical average, not a prediction. This is an estimate machine, not advice — and it says so.
 
-The math is locked by **143 automated tests**, including golden tests against published OPM computation examples, SSA's exact reduction/credit factors, the TSP match schedule, and the DFAS formula.
+The math is locked by **146 automated tests**, including golden tests against published OPM computation examples, SSA's exact reduction/credit factors, the TSP match schedule, and the DFAS formula.
 
 ## Privacy
 
@@ -73,7 +73,7 @@ Vanilla JavaScript, no framework, no runtime dependencies. One state object → 
 ```
 npm install
 npm run dev      # local dev server
-npm test         # vitest — 143 tests; correctness is the product
+npm test         # vitest — 146 tests; correctness is the product
 npm run build    # dist/ → index.html + sw.js + manifest.webmanifest + README
 ```
 
@@ -95,7 +95,7 @@ Design rules, if you contribute: inputs must be readable off a statement the use
 
 ## Roadmap
 
-The original roadmap — spouse/dual-fed households, survivor scenarios (SBP/DIC), FERS disability, FEHB/TRICARE comparison, and the Roth conversion ladder — has shipped. Next: deeper survivor modeling (FEGLI, reverse scenario), exact SSA earnings-record math, VA official tables, and annual data refreshes.
+The original roadmap — spouse/dual-fed households, survivor scenarios in both directions (SBP/DIC and the widow's tax trap), FERS disability, FEHB/TRICARE comparison, and the Roth conversion ladder — has shipped. Next: an early-stop Social Security adjustment (statement numbers assume you keep working — the full AIME/PIA engine can correct that for early retirees), VA table verification for the remaining dependent combinations, and the January data refresh each year. A built-in staleness guard flags the footer if the tables' year falls behind the calendar. FEGLI is parked unless users ask.
 
 **Not** on the roadmap: accounts, backends, ads, affiliate anything, or advice.
 
