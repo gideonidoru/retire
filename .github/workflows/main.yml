@@ -1,28 +1,9 @@
-name: Deploy Website via FTP
-
-on:
-  push:
-    branches:
-      - main # Triggers the workflow only when pushing to the main branch
-
-concurrency:
-  group: ftp-deploy-${{ github.ref }}
-  cancel-in-progress: false # Ensures uploads do not conflict or partial-upload
-
-jobs:
-  web-deploy:
-    name: Sync Files
-    runs-on: ubuntu-latest
-    steps:
-    - name: Get latest code
-      uses: actions/checkout@v4
+    - name: 🚀 SFTP Deploy
+      uses: wlixcc/SFTP-Deploy-Action@v1.2.4
       with:
-        fetch-depth: 0 # Fetches all history so it can compute differences
-
-    - name: Sync files to FTP
-      uses: SamKirkland/FTP-Deploy-Action@v4.3.5
-      with:
-        server: ${{ secrets.FTP_SERVER }}
-        username: ${{ secrets.FTP_USERNAME }}
-        password: ${{ secrets.FTP_PASSWORD }}
-        server-dir: /public_html/ # Target folder on your FTP server
+        username: ${{ secrets.SFTP_USERNAME }}
+        server: ${{ secrets.SFTP_HOST }}
+        password: ${{ secrets.SFTP_PASSWORD }} # Delete this line if using an SSH key instead
+        port: 22
+        local_dir: '.' # The folder in GitHub you want to upload ('.' uploads everything)
+        remote_dir: '/retire/' # Replace with your actual server destination path
