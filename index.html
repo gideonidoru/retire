@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Assembled — your retirement, stream by stream</title>
+<meta name="description" content="Federal + military retirement calculator. FERS, military retired pay, VA disability, Social Security, TSP — assembled into one live monthly number. 100% private, runs entirely on your device.">
+<meta name="theme-color" content="#05080F">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%2305080F'/%3E%3Crect x='7' y='19' width='18' height='4' rx='2' fill='%23E3A44A'/%3E%3Crect x='7' y='13' width='13' height='4' rx='2' fill='%236E9BD4'/%3E%3Crect x='7' y='7' width='8' height='4' rx='2' fill='%2393B899'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <script type="module" crossorigin>(function(){const e=document.createElement("link").relList;if(e&&e.supports&&e.supports("modulepreload"))return;for(const n of document.querySelectorAll('link[rel="modulepreload"]'))r(n);new MutationObserver(n=>{for(const o of n)if(o.type==="childList")for(const d of o.addedNodes)d.tagName==="LINK"&&d.rel==="modulepreload"&&r(d)}).observe(document,{childList:!0,subtree:!0});function s(n){const o={};return n.integrity&&(o.integrity=n.integrity),n.referrerPolicy&&(o.referrerPolicy=n.referrerPolicy),n.crossOrigin==="use-credentials"?o.credentials="include":n.crossOrigin==="anonymous"?o.credentials="omit":o.credentials="same-origin",o}function r(n){if(n.ep)return;n.ep=!0;const o=s(n);fetch(n.href,o)}})();const i=t=>document.getElementById(t),it={birth:"1974-03-15",sex:"m",retAge:57,goalMode:"pct",goalPct:80,goalAmt:9e3,filing:"single",stateTax:0,milServed:!0,milStatus:"receiving",milActual:4900,milSys:"high3",milYears:20,milHigh3:9800,hasVa:!0,vaRating:70,vaSpouse:!1,vaKids:0,vaParents:0,hasFed:!0,fedSpecial:!1,scd:"2014-06-01",fedHigh3:165e3,buyback:!1,sickHours:0,survivor:"none",ssAge:67,ssBase:3100,tspBal:62e4,tspRothPct:0,tspContribMode:"pct",tspContribPct:5,tspContribAmt:24500,tspMatch:"full",tspMatchPct:5,tspGrow:4,tspRate:4,savBal:8e4,savContrib:6e3,savGrow:3,savRate:4,othIncome:0},rt={you:!0,mil:!1,va:!1,fed:!1,ss:!1,tsp:!1,sav:!1},a={...it},g={...rt};function te(){Object.assign(a,it),Object.assign(g,rt)}function kt(t=a){return t.goalMode==="pct"&&t.hasFed?t.fedHigh3*(t.goalPct/100)/12:Math.max(t.goalAmt,0)}const Et=315576e5;function B(t,e=new Date){const s=new Date(t.birth||"1974-03-15");return Math.max((e.getTime()-s.getTime())/Et,18)}function ee(t,e){const s=new Date(t.birth);return new Date(s.getFullYear()+Math.floor(e),s.getMonth(),s.getDate())}function ae(t,e){const s=new Date(t.scd||"2014-06-01");return Math.max((ee(t,e).getTime()-s.getTime())/Et,0)}const vt=2026,X=24500,se=8e3,ne=12e3;function Z(t){return t>=60&&t<=63?X+ne:t>=50?X+se:X}function oe(t){const e=t.getContext("2d"),s=matchMedia("(prefers-reduced-motion:reduce)").matches;let r,n,o=[],d=[],l=[];const m=($,v)=>$+Math.random()*(v-$);function p(){r=t.width=innerWidth*devicePixelRatio,n=t.height=innerHeight*devicePixelRatio,o=[],[{n:70,r:[.3,.7],v:.01,a:[.1,.26],bokeh:!1},{n:40,r:[.6,1.2],v:.026,a:[.16,.38],bokeh:!1},{n:18,r:[1.1,2],v:.055,a:[.22,.5],bokeh:!1},{n:9,r:[8,22],v:.014,a:[.05,.11],bokeh:!0}].forEach(v=>{for(let c=0;c<v.n;c++)o.push({x:m(0,r),y:m(0,n),r:m(...v.r)*devicePixelRatio,vx:m(-1,1)*v.v*devicePixelRatio,vy:m(-.5,.25)*v.v*devicePixelRatio,a:m(...v.a),ph:m(0,Math.PI*2),tw:m(.2,.9),sway:m(.008,.034)*devicePixelRatio,swayF:m(4e-5,11e-5),bokeh:v.bokeh,amber:Math.random()<.16})}),d=[{hue:"70,110,170",base:.115,R:.72,cx:.2,cy:.28,ox:.11,oy:.08,s1:21e-6,s2:29e-6,p:0},{hue:"227,164,74",base:.08,R:.6,cx:.82,cy:.6,ox:.09,oy:.11,s1:26e-6,s2:17e-6,p:2.1},{hue:"86,140,120",base:.07,R:.64,cx:.52,cy:.96,ox:.13,oy:.06,s1:16e-6,s2:24e-6,p:4.2},{hue:"96,102,190",base:.055,R:.58,cx:.72,cy:.12,ox:.1,oy:.07,s1:14e-6,s2:19e-6,p:1.2},{hue:"182,116,102",base:.038,R:.5,cx:.12,cy:.82,ox:.08,oy:.09,s1:23e-6,s2:13e-6,p:5.3}],l=[]}function u($){const c=n*(.3+.05*Math.sin($*45e-6)),M=n*.055,f=[{w:n*.16,a:.028,hue:"96,130,190"},{w:n*.085,a:.038,hue:"110,150,190"},{w:n*.035,a:.05,hue:"150,175,205"}];for(const w of f){e.beginPath();for(let A=0;A<=64;A++){const y=A/64*r,R=c+Math.sin(A/64*4.2+$*11e-5)*M+Math.sin(A/64*9.1-$*7e-5)*M*.45;A?e.lineTo(y,R):e.moveTo(y,R)}e.strokeStyle=`rgba(${w.hue},${w.a*(.8+.2*Math.sin($*13e-5))})`,e.lineWidth=w.w,e.lineCap="round",e.stroke()}}function x(){l.push({x:m(0,r),y:n+20,life:0,max:m(14e3,22e3),vx:m(-.08,.08)*devicePixelRatio,vy:m(-.16,-.09)*devicePixelRatio,r:m(1.2,2.4)*devicePixelRatio})}let b=0;function S($){const v=b?Math.min($-b,100):16;b=$,e.clearRect(0,0,r,n),e.globalCompositeOperation="lighter";for(const c of d){const M=(c.cx+Math.sin($*c.s1+c.p)*c.ox)*r,f=(c.cy+Math.cos($*c.s2+c.p)*c.oy)*n,w=c.R*Math.max(r,n),A=c.base*(.76+.24*Math.sin($*12e-5+c.p)),y=e.createRadialGradient(M,f,0,M,f,w);y.addColorStop(0,`rgba(${c.hue},${A})`),y.addColorStop(.55,`rgba(${c.hue},${A*.35})`),y.addColorStop(1,`rgba(${c.hue},0)`),e.fillStyle=y,e.fillRect(0,0,r,n)}u($);for(const c of o){const M=.65+.35*Math.sin($*7e-4*c.tw+c.ph);if(e.globalAlpha=c.a*M,c.bokeh){const f=e.createRadialGradient(c.x,c.y,0,c.x,c.y,c.r),w=c.amber?"227,164,74":"140,165,210";f.addColorStop(0,`rgba(${w},.9)`),f.addColorStop(1,`rgba(${w},0)`),e.fillStyle=f,e.beginPath(),e.arc(c.x,c.y,c.r,0,7),e.fill()}else{if(c.amber){const f=e.createRadialGradient(c.x,c.y,0,c.x,c.y,c.r*5);f.addColorStop(0,"rgba(227,164,74,.9)"),f.addColorStop(1,"rgba(227,164,74,0)"),e.fillStyle=f,e.beginPath(),e.arc(c.x,c.y,c.r*5,0,7),e.fill()}e.fillStyle=c.amber?"#F0BE72":"#9FB4D8",e.beginPath(),e.arc(c.x,c.y,c.r,0,7),e.fill()}if(!s){c.x+=c.vx+Math.sin($*c.swayF+c.ph)*c.sway,c.y+=c.vy;const f=c.bokeh?c.r:8;c.x<-f&&(c.x=r+f),c.x>r+f&&(c.x=-f),c.y<-f&&(c.y=n+f),c.y>n+f&&(c.y=-f)}}if(!s){l.length<2&&Math.random()<v/9e3&&x();for(const c of l){c.life+=v,c.x+=c.vx*v/16,c.y+=c.vy*v/16;const M=Math.sin(Math.min(c.life/c.max,1)*Math.PI);e.globalAlpha=.5*M;const f=e.createRadialGradient(c.x,c.y,0,c.x,c.y,c.r*6);f.addColorStop(0,"rgba(227,164,74,.9)"),f.addColorStop(1,"rgba(227,164,74,0)"),e.fillStyle=f,e.beginPath(),e.arc(c.x,c.y,c.r*6,0,7),e.fill(),e.fillStyle="#F0BE72",e.beginPath(),e.arc(c.x,c.y,c.r,0,7),e.fill()}l=l.filter(c=>c.life<c.max&&c.y>-30)}e.globalAlpha=1,e.globalCompositeOperation="source-over",s||requestAnimationFrame(S)}p(),addEventListener("resize",p),s?S(9e3):requestAnimationFrame(S)}const h=t=>"$"+Math.round(t).toLocaleString("en-US"),H=t=>t>=1e6?"$"+(t/1e6).toFixed(2)+"M":"$"+Math.round(t/1e3)+"k",Ct={10:175,20:346,30:537,40:774,50:1102,60:1395,70:1759,80:2044,90:2297,100:3831},Tt={30:64,40:85,50:107,60:128,70:150,80:171,90:192,100:213},Pt={30:31,40:42,50:53,60:63,70:74,80:85,90:95,100:106},Lt={30:52,40:69,50:86,60:104,70:121,80:138,90:156,100:173};function Ft(t){return!t.milServed||t.milStatus==="separated"?0:t.milStatus==="receiving"?Math.max(t.milActual,0):t.milYears<=0?0:t.milHigh3*t.milYears*(t.milSys==="brs"?.02:.025)}function Ht(t){if(!t.hasVa||t.vaRating<10)return 0;const e=t.vaRating,s=Ct[e]||0;return e<30?s:s+(t.vaSpouse?Tt[e]:0)+t.vaKids*Pt[e]+t.vaParents*Lt[e]}function It(t){return t<=1954?66:t<=1959?66+(t-1954)*2/12:67}function _(t,e){const s=Math.round((e-It(t))*12);if(s>=0)return 1+s*(2/3)/100;const r=-s,n=Math.min(r,36),o=Math.max(r-36,0);return Math.max(1-(n*(5/9)+o*(5/12))/100,0)}function ie(t){return t.ssBase*_(new Date(t.birth).getFullYear(),t.ssAge)}function re(t){return _(t,62)}function Dt(t){return t.tspContribMode==="pct"?(t.hasFed?t.fedHigh3:0)*Math.max(t.tspContribPct,0)/100:Math.max(t.tspContribAmt,0)}function le(t){const e=t.hasFed?t.fedHigh3:0;if(e<=0)return 0;if(t.tspMatch==="custom")return e*Math.max(t.tspMatchPct,0)/100;if(t.tspMatch!=="full")return 0;const s=Dt(t)/e*100;return e*(.01+Math.min(s,3)/100+Math.max(Math.min(s,5)-3,0)/100*.5)}function tt(t){const e=Dt(t),s=le(t);return{emp:e,agency:s,total:e+s}}function gt(t,e,s,r){const n=s/100,o=Math.max(r,0);if(o===0)return t;if(n===0)return t+e*o;const d=Math.pow(1+n,o);return t*d+e*((d-1)/n)}function lt(t){return t<1948?55:t<=1952?55+(t-1947)/6:t<=1964?56:t<=1969?56+(t-1964)/6:57}const ce={none:0,partial:.05,full:.1};function et(t,e){const s={monthly:0,srs:0,startAge:e,path:"none",reduction:0,years:0,mra:null,mult:.01};if(!t.hasFed)return s;const r=new Date(t.birth).getFullYear(),n=lt(r),o=ae(t,e),d=t.buyback&&t.milServed?Math.max(t.milYears,0):0,l=o+d;if(l<5)return{...s,mra:n};let m,p=e,u=0;t.fedSpecial&&(e>=50&&l>=20||l>=25)?m="special":e>=62?m="62+5":e>=60&&l>=20?m="60+20":e>=n&&l>=30?m="MRA+30":e>=n&&l>=10?(m="MRA+10",u=Math.min((62-e)*.05,.5)):(m="deferred",p=62);const x=m==="deferred",b=x?0:Math.max(t.sickHours,0)/2087,S=l+b,$=!x&&m!=="special"&&e>=62&&S>=20?.011:.01,v=ce[t.survivor]||0,M=(m==="special"?t.fedHigh3*(Math.min(S,20)*.017+Math.max(S-20,0)*.01):t.fedHigh3*S*$)/12*(1-u)*(1-v);let f=0;return(m==="MRA+30"||m==="60+20"||m==="special")&&e<62&&(f=t.ssBase*re(r)*(Math.round(o)/40)),{monthly:M,srs:f,startAge:p,path:m,reduction:u,years:S,mra:n,mult:$,survCost:v,civ:o,buyback:d,sick:b}}const Bt=2.5,Ot=73,de={73:26.5,74:25.5,75:24.6,76:23.7,77:22.9,78:22,79:21.1,80:20.2,81:19.4,82:18.5,83:17.7,84:16.8,85:16,86:15.2,87:14.4,88:13.7,89:12.9,90:12.2,91:11.5,92:10.8,93:10.1,94:9.5,95:8.9,96:8.4,97:7.8,98:7.3,99:6.8,100:6.4};function ue(t){return de[Math.min(Math.max(t,Ot),100)]}const Nt=Bt/100,me=.02,Vt=1/(1+Nt),yt=(1+me)/(1+Nt);function he(t,e,s){if(s<=e)return 1;if(t.path==="special")return Math.pow(yt,s-e);const r=Math.max(Math.min(s,62)-e,0),n=Math.max(s-Math.max(e,62),0);return Math.pow(Vt,r)*Math.pow(yt,n)}function fe(t,e){return Math.pow(Vt,Math.max(e-t,0))}function pe(t,e,s,r=95){const n=Math.floor(B(t,e)),o=t.tspGrow/100,d=t.savGrow/100,l=Math.min(Math.max(t.tspRothPct,0),100)/100,m=tt(t).total;let p=t.tspBal,u=t.savBal,x=0,b=0,S=!1,$=!1;const v=[];for(let M=n;M<=r;M++){let f=0,w=0;if(M>=s){if(S||(S=!0,x=Math.max(p,0)*(t.tspRate/100),b=Math.max(u,0)*(t.savRate/100)),f=x,w=b,M>=Ot){const A=Math.max(p,0)*(1-l)/ue(M);A>f&&(f=A,$=!0)}f=Math.min(f,Math.max(p,0)),w=Math.min(w,Math.max(u,0))}v.push({a:M,tsp:Math.max(p,0),sav:Math.max(u,0),total:Math.max(p,0)+Math.max(u,0),tspDraw:f,savDraw:w}),M<s?(p=p*(1+o)+m,u=u*(1+d)+t.savContrib):(p=Math.max(p,0)*(1+o)-f,u=Math.max(u,0)*(1+d)-w)}const c=M=>{for(const f of v)if(f.a>s&&f[M]<=0)return f.a;return 1/0};return{rows:v,a0:n,a1:r,rmdHit:$,tspEnd:c("tsp"),savEnd:c("sav")}}function Yt(t,e,s,r=95){const n=Math.max(s-B(t,e),0),o=Ft(t),d=t.buyback&&t.milServed&&o>0,l=et(t,s),m=pe(t,e,s,r),p=gt(t.tspBal,tt(t).total,t.tspGrow,n),u=gt(t.savBal,t.savContrib,t.savGrow,n);return{A:s,mil:d?0:o,milRaw:o,waived:d,va:Ht(t),fers:l.monthly,srs:l.srs,fersInfo:l,ss:ie(t),tsp:p*(t.tspRate/100)/12,sav:u*(t.savRate/100)/12,oth:Math.max(t.othIncome,0),tspAdd:tt(t),sim:m,tspFV:p,savFV:u,tspEnd:m.tspEnd,savEnd:m.savEnd}}function ve(t,e,s){const r=t.A,n=t.sim.rows[s-t.sim.a0];return{mil:t.mil,va:t.va,fers:s>=t.fersInfo.startAge?t.fers*he(t.fersInfo,r,s):0,srs:t.srs>0&&s>=r&&s<62?t.srs*fe(r,s):0,ss:s>=e.ssAge?t.ss:0,tsp:n?n.tspDraw/12:0,sav:n?n.savDraw/12:0,oth:t.oth}}function Gt(t,e,s,r){const n=[];for(let o=s;o<=r;o++){const d=ve(t,e,o);d.a=o,d.total=d.mil+d.va+d.fers+d.srs+d.ss+d.tsp+d.sav+d.oth,n.push(d)}return n}const ge={m:[[40,37.8],[45,33.2],[50,28.8],[55,24.6],[60,20.6],[65,16.9],[70,13.4],[75,10.2],[80,7.4]],f:[[40,41.9],[45,37.2],[50,32.6],[55,28.2],[60,23.9],[65,19.8],[70,15.9],[75,12.3],[80,9]]};function ye(t,e){if(e<=t[0][0])return t[0][1];for(let s=1;s<t.length;s++)if(e<=t[s][0]){const[r,n]=t[s-1],[o,d]=t[s];return n+(d-n)*(e-r)/(o-r)}return t[t.length-1][1]}function be(t){const e=t.hasFed?t.fedHigh3:0,s=(Ft(t)+Math.max(t.othIncome,0))*12;return Math.max(e+s,24e3)}function ct(t,e=new Date){const s=B(t,e),r=s+ye(ge[t.sex==="f"?"f":"m"],s),n=Math.max(-3,Math.min(4,2*Math.log2(be(t)/6e4)));return r+n}function jt(t,e=new Date){return Math.min(100,Math.max(88,Math.round(ct(t,e))+3))}function xe(t,e){const s=kt(t),r=ct(t,e),n=jt(t,e),o=Math.ceil(B(t,e)),d=lt(new Date(t.birth).getFullYear()),l=Math.max(50,o),m=70,p=[];for(let v=l;v<=m;v++){const c=Yt(t,e,v,n),M=Gt(c,t,v,n),f=M[0].total,w=M.reduce((y,R)=>Math.min(y,R.total),1/0),A=M.reduce((y,R)=>y+R.total*12,0);p.push({A:v,st:c,atRet:f,minInc:w,lifetime:A,meets:s>0&&w>=s})}const u=p.find(v=>v.meets)||null;let x=null;const b=Math.max(s*.015,75);for(let v=1;v<p.length;v++)if(p[v].atRet-p[v-1].atRet<b){x=p[v-1].A;break}const S=p.find(v=>v.A>=Math.ceil(d))||p[0]||null,$=p.find(v=>v.A===62)||null;return{goal:s,mra:d,lo:l,hi:m,cands:p,rec:u,plateau:x,mraCand:S,c62:$,lifespan:r,horizon:n}}const Me=2026,$e={single:16100,mfj:32200},Ae={single:2050,mfj:3300},bt={single:[[12400,.1],[50400,.12],[105700,.22],[201775,.24],[256225,.32],[640600,.35],[1/0,.37]],mfj:[[24800,.1],[100800,.12],[211400,.22],[403550,.24],[512450,.32],[768700,.35],[1/0,.37]]},xt={single:[25e3,34e3],mfj:[32e3,44e3]},Mt=202.9,$t={single:[[109e3,1],[137e3,1.4],[171e3,2],[205e3,2.6],[5e5,3.2],[1/0,3.4]],mfj:[[218e3,1],[274e3,1.4],[342e3,2],[41e4,2.6],[75e4,3.2],[1/0,3.4]]};function At(t,e){for(const[s,r]of $t[e]||$t.single)if(t<=s)return Mt*r;return Mt*3.4}function Re(t,e){let s=0,r=0;for(const[n,o]of bt[e]||bt.single){if(t<=r)break;s+=(Math.min(t,n)-r)*o,r=n}return s}function Se(t,e,s){if(t<=0)return 0;const[r,n]=xt[s]||xt.single,o=e+t*.5;return o<=r?0:o<=n?Math.min((o-r)*.5,t*.5):Math.min(t*.85,(o-n)*.85+Math.min((n-r)*.5,t*.5))}function we(t,e){const s=e.filing==="mfj"?"mfj":"single",r=t.tsp*(1-Math.min(Math.max(e.tspRothPct,0),100)/100),n=(t.mil+t.fers+r+t.oth)*12,o=t.ss*12,d=Se(o,n,s),l=n+d,m=Re(Math.max(l-$e[s]-Ae[s],0),s),p=l*Math.max(e.stateTax,0)/100,u=At(l,s);return{fed:m/12,state:p/12,medicare:u,irmaa:u-At(0,s),total:(m+p)/12,net:t.total-(m+p)/12-u,taxableSSShare:o>0?d/o:0,effective:t.total>0?((m+p)/12+u)/t.total:0}}function ke(t,e,s=new Date){const r=jt(t,s),n=Yt(t,s,t.retAge,r),o=m=>!!e[m],d={st:n,milRaw:n.milRaw,waived:n.waived,mil:o("mil")?n.mil:0,va:o("va")?n.va:0,fers:o("fed")?n.fers:0,srs:o("fed")?n.srs:0,fersInfo:n.fersInfo,ss:o("ss")?n.ss:0,tsp:o("tsp")?n.tsp:0,sav:o("sav")?n.sav:0,oth:o("sav")?n.oth:0,tspFV:n.tspFV,savFV:n.savFV,tspEnd:n.tspEnd,savEnd:n.savEnd,goal:kt(t)};d.total=d.mil+d.va+d.fers+d.ss+d.tsp+d.sav+d.oth,d.taxfree=d.va+d.tsp*Math.min(Math.max(t.tspRothPct,0),100)/100,d.floor=d.mil+d.va+d.fers+d.ss,d.tspAdd=n.tspAdd,d.taxes=we(d,t),d.lifespan=ct(t,s),d.horizon=r,d.retYear=new Date(t.birth).getFullYear()+t.retAge,d.inflFactor=Math.pow(1+Bt/100,Math.max(t.retAge-B(t,s),0)),d.rmdHit=n.sim.rmdHit;const l=Math.min(t.retAge,Math.floor(B(t,s)));return d.series=Gt(n,t,l,d.horizon),d.nw=n.sim.rows,d.opt=xe(t,s),d}const U={mil:"#E3A44A",va:"#93B899",fers:"#6E9BD4",srs:"#9DBCE8",ss:"#A9B3C6",tsp:"#C97F5B",sav:"#6EA3AD",oth:"#A292C8"},dt={dark:{marker:"rgba(241,238,230,.35)",text:"rgba(241,238,230,.55)",grid:"rgba(241,238,230,.08)"},light:{marker:"rgba(23,32,46,.4)",text:"rgba(85,96,122,.9)",grid:"rgba(23,32,46,.08)"}};function ut(t,e,s){const r=devicePixelRatio||1,n=(s||t.clientWidth)*r;if(n<=0)return null;const o=e*r;return t.width=n,t.height=o,{x:t.getContext("2d"),cw:n,ch:o,dpr:r}}function zt(t,e,s,r,n,o,d){t.fillStyle=e.text,t.font=`${9.5*s}px Instrument Sans, system-ui, sans-serif`,t.textAlign="center";for(let l=Math.ceil(r/5)*5;l<=n;l+=5)l-r<2||n-l<2||t.fillText(String(l),o(l),d-4*s)}function _t(t,e,s,{theme:r="dark",height:n=150,width:o=0}={}){const d=ut(t,n,o);if(!d)return;const{x:l,cw:m,ch:p,dpr:u}=d,x=dt[r],b=e.series;if(!b.length)return;const S=b[0].a,$=b[b.length-1].a,v=e.goal||0;let c=Math.max(1,v);b.forEach(R=>{c=Math.max(c,R.total)}),l.clearRect(0,0,m,p);const M=R=>(R-S)/($-S)*m,f=R=>p-R/c*(p*.88),w=["oth","sav","tsp","ss","srs","fers","va","mil"],A=b.map(()=>0);for(const R of w){l.beginPath(),b.forEach((E,O)=>{const j=f(A[O]+E[R]);O?l.lineTo(M(E.a),j):l.moveTo(M(E.a),j)});for(let E=b.length-1;E>=0;E--)l.lineTo(M(b[E].a),f(A[E]));l.closePath(),l.fillStyle=U[R]+"CC",l.fill(),b.forEach((E,O)=>{A[O]+=E[R]})}l.strokeStyle=x.marker,l.setLineDash([4*u,4*u]),l.lineWidth=u;const y=R=>{R>S&&R<$&&(l.beginPath(),l.moveTo(M(R),0),l.lineTo(M(R),p),l.stroke())};return y(s.retAge),y(s.ssAge),y(e.tspEnd),y(e.savEnd),v>0&&(l.beginPath(),l.moveTo(0,f(v)),l.lineTo(m,f(v)),l.stroke()),l.setLineDash([]),zt(l,x,u,S,$,M,p),{a0:S,a1:$}}function Ut(t,e,s,{theme:r="dark",height:n=120,width:o=0}={}){const d=ut(t,n,o);if(!d)return;const{x:l,cw:m,ch:p,dpr:u}=d,x=dt[r],b=e.nw;if(!b.length)return;const S=b[0].a,$=b[b.length-1].a;let v=1;b.forEach(A=>{v=Math.max(v,A.total)}),l.clearRect(0,0,m,p);const c=A=>(A-S)/($-S)*m,M=A=>p-A/v*(p*.86),f=b.map(()=>0);for(const A of["tsp","sav"]){l.beginPath(),b.forEach((y,R)=>{const E=M(f[R]+y[A]);R?l.lineTo(c(y.a),E):l.moveTo(c(y.a),E)});for(let y=b.length-1;y>=0;y--)l.lineTo(c(b[y].a),M(f[y]));l.closePath(),l.fillStyle=U[A]+"B8",l.fill(),b.forEach((y,R)=>{f[R]+=y[A]})}l.beginPath(),b.forEach((A,y)=>{const R=M(A.total);y?l.lineTo(c(A.a),R):l.moveTo(c(A.a),R)}),l.strokeStyle=x.text,l.lineWidth=u,l.stroke(),l.strokeStyle=x.marker,l.setLineDash([4*u,4*u]),s.retAge>S&&s.retAge<$&&(l.beginPath(),l.moveTo(c(s.retAge),0),l.lineTo(c(s.retAge),p),l.stroke()),l.setLineDash([]),zt(l,x,u,S,$,c,p);let w=b[0];return b.forEach(A=>{A.total>w.total&&(w=A)}),{a0:S,a1:$,peak:w,end:b[b.length-1]}}function Ee(t,e,s,{theme:r="dark",height:n=130,width:o=0}={}){const d=ut(t,n,o);if(!d)return;const{x:l,cw:m,ch:p,dpr:u}=d,x=dt[r],b=e.cands;if(!b.length)return;let S=Math.max(e.goal,1);b.forEach(f=>{S=Math.max(S,f.atRet)}),l.clearRect(0,0,m,p);const $=2*u,v=(m-$*2)/b.length,c=f=>p-f/S*(p*.8),M=14*u;b.forEach((f,w)=>{const A=$+w*v,y=e.rec&&f.A===e.rec.A,R=U.mil;l.fillStyle=y?R:f.meets?R+"99":R+"3D";const E=c(f.atRet);l.beginPath(),l.roundRect(A+v*.14,E,v*.72,p-M-E,3*u),l.fill(),l.fillStyle=y||w%2===0?x.text:"transparent",l.font=`${10*u}px Instrument Sans, system-ui, sans-serif`,l.textAlign="center",l.fillText(String(f.A),A+v/2,p-3*u)}),e.goal>0&&(l.strokeStyle=x.marker,l.setLineDash([5*u,4*u]),l.lineWidth=u,l.beginPath(),l.moveTo(0,c(e.goal)),l.lineTo(m,c(e.goal)),l.stroke(),l.setLineDash([]))}const mt="assembled:v1";function Ce(){try{localStorage.setItem(mt,JSON.stringify({v:1,S:a,touched:g}))}catch{}}function Te(){try{const t=JSON.parse(localStorage.getItem(mt));if(t&&t.v===1&&t.S)return Kt(t),!0}catch{}return!1}function Pe(){try{localStorage.removeItem(mt)}catch{}}function Kt(t){for(const e of Object.keys(it))e in t.S&&(a[e]=t.S[e]);for(const e of Object.keys(rt))t.touched&&e in t.touched&&(g[e]=!!t.touched[e])}function Le(){const t=new Blob([JSON.stringify({v:1,app:"assembled",exported:new Date().toISOString(),S:a,touched:g},null,2)],{type:"application/json"}),e=document.createElement("a");e.href=URL.createObjectURL(t),e.download="assembled-plan.json",e.click(),URL.revokeObjectURL(e.href)}function Fe(t,e){const s=new FileReader;s.onload=()=>{try{const r=JSON.parse(s.result);if(!r||r.v!==1||!r.S)throw new Error("wrong shape");Kt(r),e(!0)}catch{e(!1)}},s.readAsText(t)}let Rt=0,Wt=null;const Q=()=>Wt,He=t=>{const e=Math.round(t%1*12);return e?`${Math.floor(t)} y ${e} mo`:String(t)},W=t=>t===1/0?"outlasts the plan at this draw":`lasts to ~${t}`;function I(t,e,{text:s,active:r,done:n}){const o=i(t),d=i(e);o.textContent=s,o.classList.toggle("zero",!r),d.classList.toggle("done",!!n)}function Ie(){i("c-mil").classList.toggle("locked",!g.you),i("c-va").classList.toggle("locked",!g.mil),i("c-fed").classList.toggle("locked",!g.va),i("c-ss").classList.toggle("locked",!g.fed),i("c-tsp").classList.toggle("locked",!g.ss),i("c-sav").classList.toggle("locked",!g.tsp),i("c-sum").classList.toggle("locked",!g.sav)}function C(){const t=new Date,e=ke(a,g,t);Wt=e;const s=e.fersInfo,r=Math.floor(B(a,t)),n=Math.max(a.retAge-B(a,t),0);if(i("v-retAge").textContent=a.retAge,i("v-ssAge").textContent=a.ssAge,I("chip-you","c-you",{text:`${r} → ${a.retAge}`,active:!0,done:!0}),i("goalNote").innerHTML=e.goal>0?`Goal: <b>${h(e.goal)}/mo</b> in today's dollars${a.goalMode==="pct"&&a.hasFed?` — ${a.goalPct}% of your current salary`:""}. The recommendation engine finds the first retirement age that covers it every year to ${e.horizon}.`:"Set a goal to get a recommended retirement age.",i("lifeNote").innerHTML=`Estimated lifespan: <b>${Math.round(e.lifespan)}</b> — approximate SSA ${a.sex==="f"?"female":"male"} life table at your age, nudged for income. The plan runs to <b>${e.horizon}</b>, a few years past it, so a long life isn't a broke one.`,!a.milServed&&g.mil?I("chip-mil","c-mil",{text:"n/a",active:!1,done:!0}):a.milStatus==="separated"&&g.mil?I("chip-mil","c-mil",{text:`${a.milYears} yrs · no pay`,active:!1,done:!0}):e.waived&&g.mil?I("chip-mil","c-mil",{text:"waived → FERS",active:!0,done:!0}):I("chip-mil","c-mil",{text:h(e.mil)+"/mo",active:g.mil&&e.mil>0,done:g.mil}),I("chip-va","c-va",{text:!a.hasVa&&g.va?"n/a":h(e.va)+"/mo",active:g.va&&e.va>0,done:g.va}),i("vaNote").innerHTML=a.hasVa&&a.vaRating>=30?`≈ <b>${h(Ht(a))}/mo</b>, tax-free — base ${h(Ct[a.vaRating])}${a.vaSpouse?` + spouse ${h(Tt[a.vaRating])}`:""}${a.vaKids?` + ${a.vaKids} child${a.vaKids>1?"ren":""} ${h(a.vaKids*Pt[a.vaRating])}`:""}${a.vaParents?` + parent${a.vaParents>1?"s":""} ${h(a.vaParents*Lt[a.vaRating])}`:""}. Approximate 2026 tables. At 50%+ CRDP lets you keep retired pay and VA in full.`:a.hasVa?"Dependents only change the rate at 30% and above. Approximate 2026 tables.":"",I("chip-fed","c-fed",{text:!a.hasFed&&g.fed?"n/a":h(e.fers)+"/mo",active:g.fed&&e.fers>0,done:g.fed}),a.hasFed){const k=[`${s.civ.toFixed(1)} civilian`];s.buyback&&k.push(`${s.buyback} military bought back`),s.sick&&k.push(`${s.sick.toFixed(1)} sick leave`);const L={special:`Special provisions: <b>1.7%</b> on your first 20 years, 1.0% beyond — immediate and unreduced${a.retAge<62?", with the supplement even before your MRA":""}.`,"62+5":`Immediate unreduced annuity${s.mult===.011?" — the 1.1% multiplier applies (62+ with 20 years, sick leave counts)":""}.`,"60+20":"Immediate unreduced annuity (60 with 20 years).","MRA+30":"Immediate unreduced annuity (MRA with 30 years).","MRA+10":`MRA+10: reduced <b>${Math.round(s.reduction*100)}%</b> for starting ${62-a.retAge} years before 62.`,deferred:"Below your MRA at that age — modeled as a <b>deferred annuity starting at 62</b> (no supplement, no sick-leave credit).",none:"Under 5 years of creditable service — no FERS annuity."}[s.path],N=a.retAge<62&&!["special","none"].includes(s.path)?` No FERS COLA until 62 — the chart shows the real erosion at an assumed ${2.5}% inflation, then the diet COLA after.`:"";i("fedYearsNote").innerHTML=`Creditable service at ${a.retAge}: <b>${s.years.toFixed(1)} years</b> (${k.join(" + ")}) · your MRA is <b>${He(s.mra)}</b>. ${L}${s.survCost?` Survivor election costs ${Math.round(s.survCost*100)}%.`:""}${N}`}else i("fedYearsNote").innerHTML="";const o=i("srsNote");a.hasFed&&s.srs>0?(o.style.display="block",o.innerHTML=`FERS supplement: ≈ <b>${h(s.srs)}/mo</b> from ${a.retAge} to 62 — the Social Security bridge, computed on your ${Math.round(s.civ)} civilian years only (bought-back time doesn't count). It's in the chart, not the steady-state Stack.`):a.hasFed&&s.path==="MRA+10"?(o.style.display="block",o.innerHTML="No FERS supplement on an MRA+10 retirement."):o.style.display="none";const d=i("buybackRow"),l=i("buybackSub"),m=i("buybackNote");if(d.classList.toggle("disabled",!a.milServed),l.textContent=a.milServed?a.milStatus==="separated"?`Adds your ${a.milYears} military years to FERS — nothing to waive`:`Adds your ${a.milYears} military years to FERS — but you waive retired pay`:"Turn on military service (02) to model a buyback",g.fed&&a.hasFed&&a.milServed&&a.milYears>0){const k=et({...a,buyback:!0},a.retAge).monthly,L=et({...a,buyback:!1},a.retAge).monthly,N=k-L;if(m.style.display="block",a.milStatus==="separated")m.className="note delta-pos",m.innerHTML=`${a.buyback?"":"If you flipped this on: "}your ${a.milYears} years add <b>+${h(N)}/mo</b> to FERS with nothing to waive — you separated without retired pay. <span style="color:var(--muted)">Deposit cost (~3% of basic pay earned + interest) not yet modeled — almost always worth pricing.</span>`;else if(e.milRaw>0){const V=N-e.milRaw;m.className="note "+(V>=0?"delta-pos":"delta-neg"),m.innerHTML=`${a.buyback?"":"If you flipped this on: "}FERS gains <b>${h(N)}/mo</b>, retired pay waived <b>−${h(e.milRaw)}/mo</b> → net <span class="delta-num">${V>=0?"+":"−"}${h(Math.abs(V))}/mo</span>. <span style="color:var(--muted)">Deposit cost &amp; CRDP nuances not yet included — the shape of the decision, not the answer.</span>`}else m.style.display="none"}else m.style.display="none";I("chip-ss","c-ss",{text:h(e.ss)+"/mo",active:g.ss&&e.ss>0,done:g.ss});const p=new Date(a.birth).getFullYear(),u=It(p),x=Math.round(u%1*12);i("fraTxt").textContent=x?`${Math.floor(u)} + ${x} mo`:String(u);const b=_(p,62),S=_(p,70),$=_(p,a.ssAge);i("ssCurveNote").innerHTML=`Claiming at ${a.ssAge} pays <b>${Math.round($*100)}%</b> of your FRA amount for life — <b>${h(e.ss)}/mo</b>. The range: 62 pays ${Math.round(b*100)}%, 70 pays ${Math.round(S*100)}%. SSA's exact monthly factors, not an approximation.`;const v=e.tspAdd,c=Z(r),M=v.emp>c;i("tspAddNote").className="note"+(M?" delta-neg":"");const f=a.hasFed&&a.fedHigh3>0?` (${(v.emp/a.fedHigh3*100).toFixed(1)}% of salary)`:"";i("tspAddNote").innerHTML=`You add <b>${h(v.emp)}/yr</b>${a.tspContribMode==="pct"?f.replace("(","(= "):f} ${v.agency>0?`+ agency <b>${h(v.agency)}/yr</b> `:""}→ <b>${h(v.total)}/yr</b> into TSP.`+(M?` That's over the ${vt} IRS limit for your age — <b>${h(c)}</b> (${h(Z(49))} + catch-up).`:` ${vt} IRS limit for your age: ${h(c)}.`)+(a.tspRothPct>0?` Roth share ${a.tspRothPct}% — those draws come out tax-free.`:""),i("tspMaxBtn").textContent=`Max · ${h(c)}`,I("chip-tsp","c-tsp",{text:h(e.tsp)+"/mo",active:g.tsp&&e.tsp>0,done:g.tsp}),I("chip-sav","c-sav",{text:h(e.sav+e.oth)+"/mo",active:g.sav&&e.sav+e.oth>0,done:g.sav});const w=a.fedSpecial?50:55,A=(a.retAge<w&&e.tsp>0?` <b>Heads up:</b> drawing TSP before the year you turn ${w} usually adds a 10% early-withdrawal penalty (Rule of 55) — not yet in the tax estimate.`:"")+(e.rmdHit?` From 73, <b>RMDs</b> on the traditional share force more out than your ${a.tspRate}% — the chart and depletion include that.`:"");i("tspProj").innerHTML=(n>0?`Projected at ${a.retAge}: <b>${h(e.tspFV)}</b> in today's dollars — ${n.toFixed(1)} more years of saving at ${a.tspGrow}% real growth. Drawn at ${a.tspRate}%, it ${W(e.tspEnd)}.`:`At or past your retirement age — using today's balance of <b>${h(e.tspFV)}</b>. Drawn at ${a.tspRate}%, it ${W(e.tspEnd)}.`)+A,i("savProj").innerHTML=n>0?`Projected at ${a.retAge}: <b>${h(e.savFV)}</b> — drawn at ${a.savRate}%, it ${W(e.savEnd)}.`:`Today's balance <b>${h(e.savFV)}</b> — drawn at ${a.savRate}%, it ${W(e.savEnd)}.`,i("sumTotal").textContent=h(e.total),i("sumTaxfree").textContent=h(e.taxfree),i("sumNominal").innerHTML=e.inflFactor>1.01?`the checks themselves will read ≈ <b>${h(e.total*e.inflFactor)}/mo</b> in ${e.retYear} — same buying power, at the assumed 2.5% inflation`:"";const y=e.opt,R=i("recTitle"),E=i("recSub");if(y.goal<=0)R.textContent="Set a goal income to get a recommendation",E.textContent="In About you (01): a dollar amount or a percent of your current salary.";else if(y.rec){R.innerHTML=`Retire at <em class="acc">${y.rec.A}</em>`;let k=`The first age your streams cover ${h(y.goal)}/mo in every year to ${y.horizon} — including the gap before Social Security.`;y.plateau&&y.plateau>=y.rec.A&&(k+=` Past ${y.plateau}, each extra year adds under ${h(Math.max(y.goal*.015,75))}/mo — diminishing returns.`),E.textContent=k}else R.textContent="Goal out of reach by 70",E.textContent=`Even retiring at 70, your streams don't cover ${h(y.goal)}/mo in every year to ${y.horizon}. Trim the goal, raise savings, or shift claim ages.`;Ee(i("optChart"),y),i("optL").textContent=`retire at age ${y.lo}–${y.hi}`,i("optR").textContent=y.goal>0?`dashed line = goal ${h(y.goal)}/mo`:"income at retirement";const O=i("cmpCards");if(y.mraCand&&y.c62&&y.c62.A!==y.mraCand.A){const k=y.mraCand,L=y.c62,N=L.atRet-k.atRet,V=L.lifetime-k.lifetime;O.style.display="grid",O.innerHTML=`
+      <div class="kcell"><div class="kv">${h(k.atRet)}/mo</div><div class="kl">Out at MRA (${k.A}) · lifetime to ${y.horizon} ≈ ${H(k.lifetime)}</div></div>
+      <div class="kcell"><div class="kv">${h(L.atRet)}/mo</div><div class="kl">Hold to 62 · lifetime to ${y.horizon} ≈ ${H(L.lifetime)}</div></div>`,i("cmpDelta").innerHTML=`Holding to 62 pays <b>${N>=0?"+":"−"}${h(Math.abs(N))}/mo</b> more at retirement — and ${V>=0?"adds":"gives up"} <b>${H(Math.abs(V))}</b> in total income to ${y.horizon}, since ${V>=0?"the bigger checks outweigh":"you collect for"} ${V>=0?"the shorter span":`${L.A-k.A} fewer years`}.`}else O.style.display="none",i("cmpDelta").innerHTML="";const j=_t(i("incomeChart"),e,a);j&&(i("chartL").textContent=`age ${j.a0}`,i("chartR").textContent=e.tspEnd===1/0?"TSP outlasts the chart":e.tspEnd<j.a1?`TSP lasts to ${e.tspEnd}`:`age ${j.a1}`);const z=Ut(i("nwChart"),e,a);z&&(i("nwL").textContent=`age ${z.a0}`,i("nwR").textContent=`peak ${H(z.peak.total)} at ${z.peak.a} · ${H(z.end.total)} at ${z.end.a}`);const ht=e.nw.find(k=>k.a===a.retAge),Jt=e.nw[e.nw.length-1];i("kFloor").textContent=h(e.floor)+"/mo",i("kNet").textContent=h(e.taxes.net)+"/mo",i("kNetLbl").textContent=`After est. taxes & Medicare (${Math.round(e.taxes.effective*100)}% effective)`,i("kNwRet").textContent=H(ht?ht.total:e.nw[0].total),i("kNwEnd").textContent=H(Jt.total),i("kNwEndLbl").textContent=`Net worth at ${e.horizon} — the planning horizon`,i("kTspDry").textContent=e.tspEnd===1/0?`Past ${e.horizon}`:`Age ${e.tspEnd}`,i("kTspDryLbl").textContent=`TSP runs dry at the ${a.tspRate}% draw${e.rmdHit?" + RMDs":""}`,i("kSavDry").textContent=e.savEnd===1/0?`Past ${e.horizon}`:`Age ${e.savEnd}`,i("kSavDryLbl").textContent=`Savings run dry at the ${a.savRate}% draw`,i("taxNote").innerHTML=`Estimated taxes: federal <b>${h(e.taxes.fed)}/mo</b> (${Me} brackets, ${a.filing==="mfj"?"married filing jointly":"single"}, standard deduction incl. 65+)${a.stateTax>0?` + state <b>${h(e.taxes.state)}/mo</b> at your flat ${a.stateTax}%`:""} + Medicare Part B <b>${h(e.taxes.medicare)}/mo</b> from 65${e.taxes.irmaa>0?` (incl. ${h(e.taxes.irmaa)} IRMAA at your income)`:""} → <b>${h(e.taxes.net)}/mo</b> net. VA${a.tspRothPct>0?" and your Roth TSP share stay":" stays"} tax-free; ${Math.round(e.taxes.taxableSSShare*100)}% of Social Security is taxable at your income; savings draws treated as untaxed principal. An estimate for planning, not a filing.`;const ft=[["Military retired pay",e.mil,"mil"],["VA disability",e.va,"va"],["FERS annuity",e.fers,"fers"],["FERS supplement (to 62)",g.fed?e.srs:0,"srs"],["Social Security",e.ss,"ss"],["TSP draw",e.tsp,"tsp"],["Savings draw",e.sav,"sav"],["Other income",e.oth,"oth"]].filter(k=>k[1]>0).map(k=>`<div class="leg-row"><span class="leg-swatch" style="background:${U[k[2]]}"></span>
+     <span class="leg-name">${k[0]}</span><span class="leg-val">${h(k[1])}/mo</span></div>`).join("")||'<div class="leg-row"><span class="leg-name">No streams yet — work through the sections above.</span></div>';i("legend").innerHTML=ft,i("railLegend").innerHTML=ft;const J=e.opt,pt=e.goal>0&&e.total>=e.goal;i("railStats").innerHTML=`
+    <div class="rs-cell"><div class="rs-v">${h(e.taxes.net)}</div><div class="rs-l">after taxes &amp; Medicare /mo</div></div>
+    <div class="rs-cell"><div class="rs-v">${h(e.floor)}</div><div class="rs-l">guaranteed floor /mo</div></div>
+    <div class="rs-cell"><div class="rs-v">${J.rec?`<em class="acc">${J.rec.A}</em>`:"—"}</div><div class="rs-l">${J.rec?"recommended retirement age":"goal not covered by 70"}</div></div>
+    <div class="rs-cell ${e.goal>0?pt?"rs-good":"rs-warn":""}"><div class="rs-v">${e.goal>0?pt?"Covered":h(e.goal-e.total)+" short":"—"}</div><div class="rs-l">vs goal ${e.goal>0?h(e.goal)+"/mo":"(not set)"}</div></div>`;const K=i("dockNum");K.innerHTML=h(e.total)+"<small>/mo</small>",Math.round(e.total)!==Math.round(Rt)&&(K.classList.remove("pulse"),K.offsetWidth,K.classList.add("pulse")),Rt=e.total,i("dockYr").textContent=h(e.total*12)+"/yr";const Xt=e.total||1,Qt=i("stackBar").children;[e.mil,e.va,e.fers,e.ss,e.tsp,e.sav,e.oth].forEach((k,L)=>{Qt[L].style.width=k/Xt*100+"%"});const Zt=[!g.mil&&"Military next",!g.va&&"VA rating next",!g.fed&&"Federal service next",!g.ss&&"Social Security next",!g.tsp&&"TSP next",!g.sav&&"Savings next"].filter(Boolean);i("dockHint").textContent=g.sav?e.goal>0?e.total>=e.goal?`Goal ${h(e.goal)} — covered`:`Goal ${h(e.goal)} — ${h(e.goal-e.total)} short`:"All streams in — open the full picture":Zt[0]||"Start with your ages above",Ie(),Ce()}function St(t,e=new Date){const s=i("report");if(!t)return;const r=t.fersInfo,n=t.opt,o=e.toLocaleDateString(void 0,{year:"numeric",month:"long",day:"numeric"}),d=[["Military retired pay",t.mil,"mil"],["VA disability — tax-free",t.va,"va"],["FERS annuity",t.fers,"fers"],[`FERS supplement (${a.retAge}→62)`,t.srs,"srs"],[`Social Security (from ${a.ssAge})`,t.ss,"ss"],[`TSP draw (${a.tspRate}%)`,t.tsp,"tsp"],[`Savings draw (${a.savRate}%)`,t.sav,"sav"],["Other income",t.oth,"oth"]].filter(x=>x[1]>0),l=t.nw[t.nw.length-1],m=d.map(x=>`<tr><td><span class="r-sw" style="background:${U[x[2]]}"></span>${x[0]}</td><td>${h(x[1])}/mo</td></tr>`).join(""),p=n.goal<=0?"No goal income set.":n.rec?`<b>Retire at ${n.rec.A}</b> — the first age these streams cover the ${h(n.goal)}/mo goal in every year to ${n.horizon}${n.plateau&&n.plateau>=n.rec.A?`; past ${n.plateau} each extra working year adds little (diminishing returns)`:""}.`:`The ${h(n.goal)}/mo goal isn't covered in every year to ${n.horizon} at any retirement age up to 70.`,u=n.mraCand&&n.c62&&n.c62.A!==n.mraCand.A?`Out at ${n.mraCand.A}: ${h(n.mraCand.atRet)}/mo (≈ ${H(n.mraCand.lifetime)} to ${n.horizon}) · Hold to 62: ${h(n.c62.atRet)}/mo (≈ ${H(n.c62.lifetime)} to ${n.horizon}).`:"";s.innerHTML=`
+    <div class="r-head"><div class="r-brand">Your retirement, <em>assembled.</em></div><div class="r-date">${o} · today's dollars</div></div>
+    <div class="r-hero">
+      <div class="r-total">${h(t.total)}<small>/mo</small></div>
+      <div class="r-sub">combined income at ${a.retAge} · ${h(t.total*12)}/yr · <b class="tf">${h(t.taxfree)}/mo tax-free</b> · guaranteed floor ${h(t.floor)}/mo${t.inflFactor>1.01?` · ≈ ${h(t.total*t.inflFactor)}/mo in ${t.retYear} dollars`:""}</div>
+    </div>
+    <div class="r-sec">The streams</div>
+    <table class="r-streams"><tbody>${m}</tbody></table>
+    <div class="r-sec">Income by age</div>
+    <canvas class="r-chart" id="r-income"></canvas>
+    <div class="r-sec">Net worth — TSP + savings</div>
+    <canvas class="r-chart" id="r-nw"></canvas>
+    <div class="r-sec">When to go</div>
+    <p class="r-rec">${p}${u?" "+u:""}</p>
+    <div class="r-grid">
+      <div class="r-cell"><div class="kv">${h(t.floor)}/mo</div><div class="kl">Guaranteed floor — pensions, VA &amp; SS; never depletes</div></div>
+      <div class="r-cell"><div class="kv">${H((t.nw.find(x=>x.a===a.retAge)||t.nw[0]).total)}</div><div class="kl">Net worth at retirement</div></div>
+      <div class="r-cell"><div class="kv">${l?H(l.total):"—"}</div><div class="kl">Net worth at ${n.horizon} — the planning horizon</div></div>
+      <div class="r-cell"><div class="kv">${t.tspEnd===1/0?"never":t.tspEnd} · ${t.savEnd===1/0?"never":t.savEnd}</div><div class="kl">TSP · savings run dry (at chosen draws)</div></div>
+    </div>
+    <div class="r-sec">Assumptions &amp; approximations</div>
+    <ol class="r-notes">
+      <li>All figures in today's dollars; growth rates are above inflation. Pensions treated as fully COLA'd (FERS diet-COLA and pre-62 COLA gap not yet modeled).</li>
+      <li>Current salary stands in for the FERS high-3 — a conservative floor.</li>
+      ${a.hasFed?`<li>FERS path: ${r.path}${r.reduction?`, reduced ${Math.round(r.reduction*100)}% (MRA+10)`:""}${r.survCost?`, survivor election −${Math.round(r.survCost*100)}%`:""}; multiplier ${(r.mult*100).toFixed(1)}%.</li>`:""}
+      ${a.buyback?"<li>Buyback deposit cost (~3% of military basic pay + interest) not yet modeled.</li>":""}
+      <li>VA rates: approximate 2026 tables. Social Security: approximate claim-age curve around the age-67 base.</li>
+      <li>Planning horizon ${n.horizon} = estimated lifespan ${Math.round(n.lifespan)} (SSA ${a.sex==="f"?"female":"male"} life table, income-adjusted) + buffer — a statistical average, not a prediction.</li>
+      <li>Withdrawals are constant today's-dollar draws fixed at retirement, with IRS RMDs (from 73, traditional share) forced where larger. Estimated federal/state taxes and Medicare Part B (incl. IRMAA) are netted in the after-tax figure; VA and Roth draws are never taxed.</li>
+      <li>FERS COLA gap before 62 and the diet COLA after are modeled in real terms at an assumed 2.5% inflation; military pay, VA, and Social Security are treated as fully COLA'd.</li>
+    </ol>
+    <div class="r-foot">Assembled — estimates and observations, not financial advice. Generated entirely on your device; your data never left it.</div>`,_t(i("r-income"),t,a,{theme:"light",height:170,width:680}),Ut(i("r-nw"),t,a,{theme:"light",height:150,width:680})}function De(t,e=new Date){const s=u=>{const x=String(u??"");return/[",\n]/.test(x)?'"'+x.replace(/"/g,'""')+'"':x},r=(...u)=>u.map(s).join(","),n=u=>Math.round(u),o=[];o.push(r("Assembled — retirement plan export",e.toISOString().slice(0,10))),o.push(r("All figures in today's dollars. Estimates, not advice. Generated locally — your data never left your device.")),o.push(""),o.push(r("YOUR INPUTS")),o.push(r("Field","Value"));const d=t.fersInfo;[["Birthdate",a.birth],["Sex (lifespan estimate)",a.sex==="f"?"female":"male"],["Retirement age",a.retAge],["Goal income ($/mo)",n(t.goal)],["Served in the military",a.milServed?"yes":"no"],...a.milServed?[["Military status",{receiving:"receiving retired pay",calc:"will retire",separated:"separated — no retired pay"}[a.milStatus]],["Military years",a.milYears],...a.milStatus==="receiving"?[["Gross retired pay ($/mo)",a.milActual]]:[],...a.milStatus==="calc"?[["System",a.milSys==="brs"?"BRS 2.0%":"High-3 2.5%"],["Military high-3 basic pay ($/mo)",a.milHigh3]]:[]]:[],["VA rating",a.hasVa?a.vaRating+"%":"none"],...a.hasVa?[["Married",a.vaSpouse?"yes":"no"],["Children under 18",a.vaKids],["Dependent parents",a.vaParents]]:[],["Federal civilian (FERS)",a.hasFed?"yes":"no"],...a.hasFed?[["Position type",a.fedSpecial?"special provisions (LEO/FF/ATC/CBP)":"regular FERS"],["Service Computation Date",a.scd],["Current salary ($/yr, high-3 proxy)",a.fedHigh3],["Military buyback",a.buyback?"yes":"no"],["Sick leave (hours)",a.sickHours],["Survivor election",a.survivor],["MRA",lt(new Date(a.birth).getFullYear()).toFixed(2)]]:[],["Tax filing status",a.filing==="mfj"?"married filing jointly":"single"],["State income tax (flat %)",a.stateTax],["SS benefit at FRA ($/mo)",a.ssBase],["SS claim age",a.ssAge],["TSP balance today ($)",a.tspBal],["TSP Roth share (%)",a.tspRothPct],["TSP you contribute",a.tspContribMode==="pct"?a.tspContribPct+"% of salary":"$"+a.tspContribAmt+"/yr"],["TSP agency additions",{full:"FERS/BRS (1% auto + match)",custom:a.tspMatchPct+"% custom",none:"none (CSRS)"}[a.tspMatch]],["TSP employee ($/yr)",n(t.tspAdd.emp)],["TSP agency ($/yr)",n(t.tspAdd.agency)],["TSP growth above inflation (%/yr)",a.tspGrow],["TSP withdrawal (%/yr)",a.tspRate],["Savings balance today ($)",a.savBal],["Savings contributions ($/yr)",a.savContrib],["Savings growth above inflation (%/yr)",a.savGrow],["Savings withdrawal (%/yr)",a.savRate],["Other income ($/mo)",a.othIncome]].forEach(u=>o.push(r(...u))),o.push(""),o.push(r("COMPUTED SUMMARY")),o.push(r("Field","Value")),[["Combined income at retirement ($/mo, today's dollars)",n(t.total)],[`Nominal equivalent in ${t.retYear} ($/mo, 2.5% infl.)`,n(t.total*t.inflFactor)],["Tax-free portion ($/mo)",n(t.taxfree)],["Guaranteed floor — never depletes ($/mo)",n(t.floor)],["FERS eligibility path",d.path],["FERS creditable years",d.years.toFixed(2)],["FERS multiplier",d.mult],["FERS MRA+10 reduction",d.reduction?Math.round(d.reduction*100)+"%":"none"],["FERS supplement ($/mo to 62)",n(d.srs)],["FERS annuity starts at age",d.startAge],["TSP projected at retirement ($)",n(t.tspFV)],["TSP draw ($/mo)",n(t.tsp)],["TSP depleted at age",t.tspEnd===1/0?"never (at this draw)":t.tspEnd],["Savings projected at retirement ($)",n(t.savFV)],["Savings draw ($/mo)",n(t.sav)],["Savings depleted at age",t.savEnd===1/0?"never (at this draw)":t.savEnd],["Estimated federal tax ($/mo)",n(t.taxes.fed)],["Estimated state tax ($/mo)",n(t.taxes.state)],["Medicare Part B from 65 ($/mo, incl. IRMAA)",n(t.taxes.medicare)],["After taxes & Medicare ($/mo)",n(t.taxes.net)],["RMDs force extra TSP draws from 73",t.rmdHit?"yes":"no"],["Estimated lifespan (SSA table + income adj.)",Math.round(t.lifespan)],["Planning horizon (lifespan + buffer)",t.horizon],["Recommended retirement age",t.opt.rec?t.opt.rec.A:"goal not covered by 70"],["Diminishing returns after age",t.opt.plateau??"—"]].forEach(u=>o.push(r(...u))),o.push(""),o.push(r("YEAR BY YEAR — monthly income by stream, balances at start of year")),o.push(r("Age","Military","VA (tax-free)","FERS annuity","FERS supplement","Social Security","TSP draw","Savings draw","Other","Total $/mo","Total $/yr","TSP balance","Savings balance","Net worth"));const p=Object.fromEntries(t.nw.map(u=>[u.a,u]));return t.series.forEach(u=>{const x=p[u.a];o.push(r(u.a,n(u.mil),n(u.va),n(u.fers),n(u.srs),n(u.ss),n(u.tsp),n(u.sav),n(u.oth),n(u.total),n(u.total*12),x?n(x.tsp):"",x?n(x.sav):"",x?n(x.total):""))}),o.push(""),o.push(r("CANDIDATE RETIREMENT AGES — what each departure age produces")),o.push(r("Retire at","Income at retirement $/mo",`Lowest year $/mo (to ${t.horizon})`,`Lifetime income to ${t.horizon} $`,"Covers goal every year")),t.opt.cands.forEach(u=>o.push(r(u.A,n(u.atRet),n(u.minInc),n(u.lifetime),u.meets?"yes":"no"))),o.join(`\r
+`)}function Be(t){const e=new Blob(["\uFEFF"+De(t)],{type:"text/csv;charset=utf-8"}),s=document.createElement("a");s.href=URL.createObjectURL(e),s.download="assembled-plan.csv",s.click(),URL.revokeObjectURL(s.href)}const G=[{id:"c-you",key:"you"},{id:"c-mil",key:"mil"},{id:"c-va",key:"va"},{id:"c-fed",key:"fed"},{id:"c-ss",key:"ss"},{id:"c-tsp",key:"tsp"},{id:"c-sav",key:"sav"},{id:"c-sum",key:"sum"}];function at(t){G.forEach(s=>i(s.id).classList.toggle("open",s.id===t));const e=i(t);C(),requestAnimationFrame(()=>e.scrollIntoView({behavior:"smooth",block:"start"}))}function Oe(){G.forEach((t,e)=>{const s=i(t.id);s.querySelectorAll("[data-nav]").forEach(r=>{r.addEventListener("click",n=>{if(n.stopPropagation(),r.dataset.nav==="next"){t.key!=="sum"&&(g[t.key]=!0);const o=G[e+1];o&&at(o.id)}else{const o=G[e-1];o&&at(o.id)}})}),s.querySelector(".card-head").addEventListener("click",()=>{s.classList.contains("locked")||(s.classList.toggle("open"),s.classList.contains("open")&&C())}),s.addEventListener("click",()=>{!s.classList.contains("locked")&&t.key!=="sum"&&!g[t.key]&&(g[t.key]=!0,C())})})}function P(t,e,s){i(t).addEventListener("input",r=>{a[e]=Math.max(+r.target.value||0,0),s&&(g[s]=!0),C()})}const q=t=>+String(t).replace(/[^0-9]/g,"")||0,T=t=>"$"+Math.round(Math.max(t,0)).toLocaleString("en-US");function Ne(t){t.type="text",t.inputMode="numeric",t.autocomplete="off",t.addEventListener("input",()=>{const e=(t.value.slice(0,t.selectionStart||0).match(/\d/g)||[]).length;t.value=T(q(t.value));let s=0,r=0;for(;s<t.value.length&&r<e;)/\d/.test(t.value[s])&&r++,s++;t.setSelectionRange(s,s)})}function Y(t,e,s){const r=i(t);Ne(r),r.addEventListener("input",()=>{a[e]=q(r.value),s&&(g[s]=!0),C()})}function wt(t,e,s){i(t).addEventListener("input",r=>{r.target.value&&(a[e]=r.target.value),s&&(g[s]=!0),C()})}function D(t,e){document.querySelectorAll(`#${t} button`).forEach(s=>s.addEventListener("click",()=>{document.querySelectorAll(`#${t} button`).forEach(r=>r.classList.remove("on")),s.classList.add("on"),e(s.dataset.v),C()}))}function F(t,e){document.querySelectorAll(`#${t} button`).forEach(s=>s.classList.toggle("on",s.dataset.v===String(e)))}function Ve(){wt("birth","birth"),D("sexSeg",o=>{a.sex=o}),P("retAge","retAge"),D("goalMode",o=>{a.goalMode=o,qt()});const t=i("goalVal");t.type="text",t.inputMode="numeric",t.addEventListener("input",()=>{const o=q(t.value);if(a.goalMode==="pct")a.goalPct=Math.min(o,200);else{a.goalAmt=o;const d=(t.value.slice(0,t.selectionStart||0).match(/\d/g)||[]).length;t.value=T(o);let l=0,m=0;for(;l<t.value.length&&m<d;)/\d/.test(t.value[l])&&m++,l++;t.setSelectionRange(l,l)}C()}),D("filingSeg",o=>{a.filing=o}),P("stateTax","stateTax"),i("milServed").addEventListener("change",o=>{a.milServed=o.target.checked,a.milServed||(a.buyback=!1),g.mil=!0,nt(),C()}),D("milStatus",o=>{a.milStatus=o,g.mil=!0,nt()}),Y("milActual","milActual","mil"),D("milSys",o=>{a.milSys=o,g.mil=!0}),Y("milHigh3","milHigh3","mil"),["milYearsA","milYears","milYearsS"].forEach(o=>{i(o).addEventListener("input",d=>{a.milYears=+d.target.value||0,g.mil=!0,["milYearsA","milYears","milYearsS"].filter(l=>l!==o).forEach(l=>{i(l).value=a.milYears}),C()})}),i("hasVa").addEventListener("change",o=>{a.hasVa=o.target.checked,g.va=!0,i("vaBody").style.display=a.hasVa?"block":"none",C()}),i("vaRating").addEventListener("change",o=>{a.vaRating=+o.target.value,g.va=!0,C()}),D("vaSpouse",o=>{a.vaSpouse=o==="1",g.va=!0}),P("vaKids","vaKids","va"),P("vaParents","vaParents","va"),i("hasFed").addEventListener("change",o=>{a.hasFed=o.target.checked,g.fed=!0,i("fedBody").style.display=a.hasFed?"block":"none",C()}),D("fedType",o=>{a.fedSpecial=o==="special",g.fed=!0}),wt("scd","scd","fed"),Y("fedHigh3","fedHigh3","fed"),P("sickHours","sickHours","fed"),D("survivor",o=>{a.survivor=o,g.fed=!0}),i("buyback").addEventListener("change",o=>{a.buyback=o.target.checked,g.fed=!0,C()}),P("ssAge","ssAge","ss"),Y("ssBase","ssBase","ss"),Y("tspBal","tspBal","tsp"),P("tspRothPct","tspRothPct","tsp"),D("tspContribMode",o=>{a.tspContribMode=o,a.hasFed&&a.fedHigh3>0&&(o==="amt"?a.tspContribAmt=Math.round(a.fedHigh3*a.tspContribPct/100):a.tspContribPct=Math.round(a.tspContribAmt/a.fedHigh3*1e3)/10),g.tsp=!0,st()});const e=i("tspContribVal");e.type="text",e.inputMode="numeric";const s=()=>a.hasFed?a.fedHigh3:0;e.addEventListener("input",()=>{const o=q(e.value);if(a.tspContribMode==="pct")a.tspContribPct=Math.min(o,100),s()>0&&(a.tspContribAmt=Math.round(s()*a.tspContribPct/100));else{a.tspContribAmt=o,s()>0&&(a.tspContribPct=Math.round(o/s()*1e3)/10);const d=(e.value.slice(0,e.selectionStart||0).match(/\d/g)||[]).length;e.value=T(o);let l=0,m=0;for(;l<e.value.length&&m<d;)/\d/.test(e.value[l])&&m++,l++;e.setSelectionRange(l,l)}g.tsp=!0,C()}),i("fedHigh3").addEventListener("input",()=>{a.tspContribMode==="pct"&&s()>0&&(a.tspContribAmt=Math.round(s()*a.tspContribPct/100))}),i("tspMaxBtn").addEventListener("click",()=>{const o=Z(Math.floor(B(a)));a.tspContribMode="amt",a.tspContribAmt=o,s()>0&&(a.tspContribPct=Math.round(o/s()*1e3)/10),g.tsp=!0,F("tspContribMode","amt"),st()}),D("tspMatchSeg",o=>{a.tspMatch=o,g.tsp=!0,i("tspMatchCustomField").style.display=o==="custom"?"block":"none"}),P("tspMatchPct","tspMatchPct","tsp"),P("tspGrow","tspGrow","tsp"),P("tspRate","tspRate","tsp"),Y("savBal","savBal","sav"),Y("savContrib","savContrib","sav"),P("savGrow","savGrow","sav"),P("savRate","savRate","sav"),Y("othIncome","othIncome","sav"),i("printBtn").addEventListener("click",()=>{St(Q()),window.print()}),i("csvBtn").addEventListener("click",()=>Be(Q())),i("exportBtn").addEventListener("click",Le),i("importBtn").addEventListener("click",()=>i("importFile").click()),i("importFile").addEventListener("change",o=>{const d=o.target.files[0];d&&Fe(d,l=>{l?(ot(),C()):alert("That file isn't an Assembled export."),o.target.value=""})}),i("resetLink").addEventListener("click",o=>{o.preventDefault(),confirm("Start over? This clears everything saved on this device.")&&(Pe(),te(),ot(),at("c-you"))}),window.addEventListener("beforeprint",()=>St(Q()));const r=i("legalModal");i("legalLink").addEventListener("click",o=>{o.preventDefault(),r.showModal()}),i("legalClose").addEventListener("click",()=>r.close()),r.addEventListener("click",o=>{o.target===r&&r.close()});let n;window.addEventListener("resize",()=>{clearTimeout(n),n=setTimeout(C,150)})}function qt(){i("goalLabel").textContent=a.goalMode==="pct"?"Goal — % of current salary":"Goal — $/mo in today's dollars",i("goalVal").value=a.goalMode==="pct"?a.goalPct:T(a.goalAmt)}function st(t=!0){i("tspContribLabel").textContent=a.tspContribMode==="pct"?"You contribute — % of salary":"You contribute — $ / year",i("tspContribVal").value=a.tspContribMode==="pct"?a.tspContribPct:T(a.tspContribAmt),t&&C()}function nt(){i("milBody").style.display=a.milServed?"block":"none",F("milStatus",a.milStatus),i("milActualField").style.display=a.milStatus==="receiving"?"grid":"none",i("milCalc").style.display=a.milStatus==="calc"?"block":"none",i("milSep").style.display=a.milStatus==="separated"?"block":"none"}function ot(){i("birth").value=a.birth,F("sexSeg",a.sex),i("retAge").value=a.retAge,F("goalMode",a.goalMode),qt(),i("milServed").checked=a.milServed,i("milActual").value=T(a.milActual),F("milSys",a.milSys),i("milHigh3").value=T(a.milHigh3),["milYearsA","milYears","milYearsS"].forEach(t=>{i(t).value=a.milYears}),nt(),i("hasVa").checked=a.hasVa,i("vaBody").style.display=a.hasVa?"block":"none",i("vaRating").value=a.vaRating,F("vaSpouse",a.vaSpouse?"1":"0"),i("vaKids").value=a.vaKids,i("vaParents").value=a.vaParents,i("hasFed").checked=a.hasFed,i("fedBody").style.display=a.hasFed?"block":"none",F("fedType",a.fedSpecial?"special":"reg"),i("scd").value=a.scd,i("fedHigh3").value=T(a.fedHigh3),i("sickHours").value=a.sickHours,F("survivor",a.survivor),i("buyback").checked=a.buyback,F("filingSeg",a.filing),i("stateTax").value=a.stateTax,i("ssAge").value=a.ssAge,i("ssBase").value=T(a.ssBase),i("tspBal").value=T(a.tspBal),i("tspRothPct").value=a.tspRothPct,F("tspContribMode",a.tspContribMode),F("tspMatchSeg",a.tspMatch),i("tspMatchCustomField").style.display=a.tspMatch==="custom"?"block":"none",i("tspMatchPct").value=a.tspMatchPct,st(!1),i("tspGrow").value=a.tspGrow,i("tspRate").value=a.tspRate,i("savBal").value=T(a.savBal),i("savContrib").value=T(a.savContrib),i("savGrow").value=a.savGrow,i("savRate").value=a.savRate,i("othIncome").value=T(a.othIncome)}oe(document.getElementById("stars"));const Ye=Te();Oe();Ve();ot();if(Ye){const t=G.find(e=>e.key!=="sum"&&!g[e.key])||G[G.length-1];G.forEach(e=>i(e.id).classList.toggle("open",e.id===t.id))}C();</script>
+  <style rel="stylesheet" crossorigin>:root{--ink:#05080F;--surface:#0C121F;--surface2:#121A2C;--line:#1E2A44;--text:#F1EEE6;--muted:#98A0B3;--faint:#5C667E;--amber:#E3A44A;--sage:#93B899;--fed:#6E9BD4;--slate:#A9B3C6;--copper:#C97F5B;--sav:#6EA3AD;--oth:#A292C8;--danger:#D97066}*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}body{background:var(--ink);color:var(--text);font-family:Instrument Sans,system-ui,sans-serif;font-size:16px;line-height:1.5;-webkit-font-smoothing:antialiased}em.acc{font-family:"Instrument Serif",serif;font-style:italic;font-weight:400;letter-spacing:.01em}#stars{position:fixed;top:0;right:0;bottom:0;left:0;z-index:0;pointer-events:none;opacity:.8}.frame{position:relative;z-index:1;max-width:440px;margin:0 auto;padding:34px 20px 195px}.eyebrow{font-size:11px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--amber)}h1{font-size:40px;line-height:1.06;font-weight:600;letter-spacing:-.015em;margin:12px 0 10px}h1 em.acc{font-size:1.04em}.lede{color:var(--muted);font-size:15.5px;margin-bottom:30px;max-width:34ch}.lede b{color:var(--text);font-weight:600}.card{background:color-mix(in srgb,var(--surface) 92%,transparent);border:1px solid var(--line);border-radius:18px;margin-bottom:14px;overflow:hidden;-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);transition:border-color .3s,opacity .3s}.card.locked{opacity:.38;pointer-events:none}.card.done{border-color:color-mix(in srgb,var(--stream,var(--amber)) 38%,var(--line))}.card-head{display:flex;align-items:center;gap:13px;padding:17px 17px 15px;cursor:pointer;-webkit-tap-highlight-color:transparent}.num{font-family:"Instrument Serif",serif;font-style:italic;font-size:15px;color:var(--faint);width:24px;flex:none;transition:color .3s}.card.done .num{color:var(--stream,var(--amber))}.card-title{font-weight:600;font-size:16.5px;flex:1;letter-spacing:-.01em}.card-sub{font-size:12.5px;color:var(--muted);margin-top:2px;font-weight:400}.chip{font-size:13.5px;font-weight:600;font-variant-numeric:tabular-nums;color:var(--stream,var(--amber));background:color-mix(in srgb,var(--stream,var(--amber)) 10%,transparent);border:1px solid color-mix(in srgb,var(--stream,var(--amber)) 26%,transparent);padding:4px 11px;border-radius:999px;white-space:nowrap}.chip.zero{color:var(--faint);background:transparent;border-color:var(--line)}.card-body{padding:2px 17px 19px;display:none}.card.open .card-body{display:block}.caret{color:var(--faint);transition:transform .25s;flex:none}.card.open .caret{transform:rotate(180deg)}.field{margin-top:15px}label{display:block;font-size:12.5px;font-weight:600;letter-spacing:.02em;color:var(--muted);margin-bottom:6px}input[type=number],input[type=date],input[type=text],select,textarea{width:100%;background:var(--surface2);border:1px solid var(--line);border-radius:11px;color:var(--text);font-family:inherit;font-size:17px;font-weight:600;font-variant-numeric:tabular-nums;padding:12px 14px;-webkit-appearance:none;-moz-appearance:none;appearance:none}textarea{font-size:13px;font-weight:400;line-height:1.5;min-height:96px;resize:vertical;font-variant-numeric:normal}input:focus,select:focus,textarea:focus,button:focus-visible{outline:2px solid var(--amber);outline-offset:2px;border-color:var(--amber)}.row2{display:grid;grid-template-columns:1fr 1fr;gap:12px}.slider-val{font-size:27px;font-weight:700;font-variant-numeric:tabular-nums;letter-spacing:-.02em}.slider-wrap{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:2px}input[type=range]{width:100%;accent-color:var(--amber);height:34px}.seg{display:flex;background:var(--surface2);border:1px solid var(--line);border-radius:11px;padding:3px;gap:3px}.seg button{flex:1;background:transparent;border:0;border-radius:8px;color:var(--muted);font-family:inherit;font-size:13.5px;font-weight:600;padding:9px 4px;cursor:pointer;transition:background .15s,color .15s}.seg button:hover{color:var(--text)}.seg button.on{background:var(--line);color:var(--text)}.seg-tall button{padding:13px 4px}.switch-row{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:17px}.switch-row .lab{font-size:14.5px;font-weight:600}.switch-row .sub{font-size:12.5px;color:var(--muted);margin-top:2px}.switch-row.disabled{opacity:.45}.switch-row.disabled .toggle{pointer-events:none}.toggle{position:relative;width:50px;height:30px;flex:none;cursor:pointer}.toggle input{opacity:0;width:100%;height:100%;position:absolute;cursor:pointer}.toggle span{position:absolute;top:0;right:0;bottom:0;left:0;background:var(--surface2);border:1px solid var(--line);border-radius:999px;transition:background .2s}.toggle span:after{content:"";position:absolute;top:3px;left:3px;width:22px;height:22px;border-radius:50%;background:var(--muted);transition:transform .2s,background .2s}.toggle input:checked+span{background:var(--amber);border-color:var(--amber)}.toggle input:checked+span:after{transform:translate(20px);background:var(--ink)}.btn{background:var(--amber);color:var(--ink);border:0;border-radius:10px;font-family:inherit;font-weight:700;font-size:14px;padding:11px 18px;cursor:pointer;transition:filter .15s,color .15s,border-color .15s}.btn:hover{filter:brightness(1.08)}.btn.ghost{background:transparent;color:var(--muted);border:1px solid var(--line)}.btn.ghost:hover{color:var(--text);border-color:var(--faint);filter:none}.card-head:hover .card-title{color:var(--stream,var(--text))}.card-head .card-title{transition:color .2s}.nav-row{display:flex;gap:10px;margin-top:20px}.nav-row .nav-next{flex:1}.input-btn{display:flex;gap:8px}.input-btn input{flex:1}.input-btn .btn{flex:none;white-space:nowrap}.note a{color:var(--text)}.parse-status{margin-top:10px;font-size:13px;line-height:1.5;color:var(--muted);display:none}.parse-status.ok{display:block;color:var(--sage)}.parse-status.err{display:block;color:var(--danger)}.note{margin-top:15px;padding:12px 14px;border-radius:11px;font-size:13px;line-height:1.55;background:var(--surface2);border:1px solid var(--line);color:var(--muted)}.note b{color:var(--text)}.note.delta-pos{border-color:color-mix(in srgb,var(--sage) 46%,var(--line));color:var(--text)}.note.delta-neg{border-color:color-mix(in srgb,var(--danger) 46%,var(--line));color:var(--text)}.delta-num{font-weight:700;font-variant-numeric:tabular-nums}.taxfree{font-size:10.5px;font-weight:700;letter-spacing:.1em;color:var(--sage);text-transform:uppercase}.summary{background:linear-gradient(180deg,var(--surface),var(--surface2))}.big-num{font-size:46px;font-weight:700;letter-spacing:-.025em;font-variant-numeric:tabular-nums;line-height:1;margin:8px 0 4px}.big-cap{font-size:13.5px;color:var(--muted)}.big-nominal{font-size:12px;color:var(--faint);margin-top:5px;font-variant-numeric:tabular-nums}.big-nominal b{color:var(--muted);font-weight:600}.rec{margin-top:18px;padding:15px 16px;border-radius:14px;background:color-mix(in srgb,var(--amber) 9%,transparent);border:1px solid color-mix(in srgb,var(--amber) 32%,var(--line))}.rec-title{font-size:21px;font-weight:700;letter-spacing:-.01em}.rec-title em.acc{color:var(--amber);font-size:1.1em}.rec-sub{font-size:13px;color:var(--muted);margin-top:4px;line-height:1.55}.kgrid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:16px}.kcell{background:var(--surface2);border:1px solid var(--line);border-radius:12px;padding:12px 14px}.kcell .kv{font-size:19px;font-weight:700;font-variant-numeric:tabular-nums;letter-spacing:-.01em}.kcell .kl{font-size:11.5px;color:var(--muted);margin-top:3px;line-height:1.35}.legend{margin-top:16px}.leg-row{display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid var(--line);font-size:14px}.leg-row:last-child{border-bottom:0}.leg-swatch{width:8px;height:8px;border-radius:50%;flex:none}.leg-name{flex:1;color:var(--muted)}.leg-val{font-weight:600;font-variant-numeric:tabular-nums}.dock{position:fixed;left:0;right:0;bottom:0;z-index:50;background:color-mix(in srgb,var(--ink) 82%,transparent);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-top:1px solid var(--line);padding:13px 20px calc(15px + env(safe-area-inset-bottom))}.dock-inner{max-width:440px;margin:0 auto}.dock-top{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:9px}.dock-label{font-size:10.5px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}.dock-label em{font-family:"Instrument Serif",serif;font-style:italic;text-transform:none;font-size:13px;letter-spacing:.02em;color:var(--amber)}.dock-num{font-size:29px;font-weight:700;letter-spacing:-.02em;font-variant-numeric:tabular-nums;transition:color .2s}.dock-num small{font-size:14px;font-weight:500;color:var(--muted)}.stack{display:flex;height:13px;border-radius:7px;overflow:hidden;background:var(--surface2);border:1px solid var(--line)}.stack div{transition:width .4s cubic-bezier(.4,0,.2,1)}.s-mil{background:var(--amber)}.s-va{background:var(--sage)}.s-fers{background:var(--fed)}.s-ss{background:var(--slate)}.s-tsp{background:var(--copper)}.s-sav{background:var(--sav)}.s-oth{background:var(--oth)}.dock-foot{display:flex;justify-content:space-between;margin-top:7px;font-size:11.5px;color:var(--faint)}.pulse{animation:pulse .45s ease}@keyframes pulse{0%{transform:scale(1)}35%{transform:scale(1.045)}to{transform:scale(1)}}footer{margin-top:28px;font-size:12px;color:var(--faint);line-height:1.65}footer a{color:var(--muted)}.rail-legend,.rail-stats{display:none}@media(min-width:1000px){.layout{display:grid;grid-template-columns:minmax(0,640px) 360px;gap:64px;justify-content:center;max-width:1160px;margin:0 auto;padding:0 36px;align-items:start}.frame{max-width:none;padding:56px 0 96px}h1{font-size:54px}h1 br{display:none}.lede{max-width:46ch;font-size:16.5px}.card-head{padding:19px 20px 17px}.card-body{padding:2px 20px 22px}.rail{padding:56px 0;position:sticky;top:0;align-self:start}.dock{position:static;background:linear-gradient(180deg,var(--surface),var(--surface2));backdrop-filter:none;-webkit-backdrop-filter:none;border:1px solid var(--line);border-radius:18px;padding:22px 22px 20px}.dock-inner{max-width:none}.dock-num{font-size:36px}.stack{height:15px}.rail-legend{display:block;margin-top:16px;padding-top:4px;border-top:1px solid var(--line)}.rail-stats{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:16px;padding-top:16px;border-top:1px solid var(--line)}.rs-cell{background:var(--surface2);border:1px solid var(--line);border-radius:10px;padding:9px 11px}.rs-cell .rs-v{font-size:15.5px;font-weight:700;font-variant-numeric:tabular-nums;letter-spacing:-.01em}.rs-cell .rs-v em.acc{color:var(--amber);font-size:1.05em}.rs-cell .rs-l{font-size:10px;color:var(--muted);margin-top:2px;line-height:1.3;letter-spacing:.02em}.rs-cell.rs-good .rs-v{color:var(--sage)}.rs-cell.rs-warn .rs-v{color:var(--danger)}}dialog#legalModal{background:var(--surface);color:var(--text);border:1px solid var(--line);border-radius:18px;max-width:min(560px,calc(100vw - 40px));max-height:min(78vh,720px);padding:0;margin:auto}dialog#legalModal::backdrop{background:#05080fb8;-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}.modal-head{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:18px 20px 14px;border-bottom:1px solid var(--line);position:sticky;top:0;background:var(--surface)}.modal-title{font-size:20px;font-weight:600;letter-spacing:-.01em}.modal-title em.acc{color:var(--amber)}.modal-body{padding:6px 20px 22px;overflow-y:auto;font-size:13.5px;line-height:1.65;color:var(--muted)}.modal-body h3{font-size:11px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--amber);margin:18px 0 6px}.modal-body p{margin:0 0 4px}.modal-body b{color:var(--text)}#report{display:none}@media print{@page{margin:13mm}body{background:#fff;color:#17202e}#stars,.layout{display:none!important}#report{display:block;max-width:680px;margin:0 auto;font-family:Instrument Sans,system-ui,sans-serif;-webkit-print-color-adjust:exact;print-color-adjust:exact}#report *{-webkit-print-color-adjust:exact;print-color-adjust:exact}.r-head{display:flex;justify-content:space-between;align-items:baseline;border-bottom:2px solid #17202E;padding-bottom:10px}.r-brand{font-size:21px;font-weight:700;letter-spacing:-.01em}.r-brand em{font-family:"Instrument Serif",serif;font-style:italic;font-weight:400}.r-date{font-size:11px;color:#55607a}.r-hero{margin:20px 0 4px}.r-total{font-size:50px;font-weight:700;letter-spacing:-.025em;font-variant-numeric:tabular-nums;line-height:1}.r-total small{font-size:19px;color:#55607a;font-weight:500}.r-sub{font-size:12.5px;color:#55607a;margin-top:6px}.r-sub b.tf{color:#4c7d57}.r-sec{font-size:10.5px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:#8a93a8;margin:22px 0 8px}table.r-streams{width:100%;border-collapse:collapse;font-size:13px}.r-streams td{padding:6px 0;border-bottom:1px solid #E4E1DB;font-variant-numeric:tabular-nums}.r-streams td:last-child{text-align:right;font-weight:600}.r-sw{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:9px}canvas.r-chart{width:100%;border:1px solid #E4E1DB;border-radius:10px;break-inside:avoid}.r-rec{font-size:13px;line-height:1.6;color:#17202e}.r-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:10px;break-inside:avoid}.r-cell{border:1px solid #E4E1DB;border-radius:10px;padding:10px 12px}.r-cell .kv{font-size:15px;font-weight:700;font-variant-numeric:tabular-nums}.r-cell .kl{font-size:9.5px;color:#55607a;margin-top:3px;line-height:1.35}ol.r-notes{margin:4px 0 0 16px;font-size:10px;color:#55607a;line-height:1.6}.r-foot{margin-top:16px;padding-top:10px;border-top:1px solid #E4E1DB;font-size:9.5px;color:#8a93a8}}</style>
+</head>
+<body>
+<canvas id="stars"></canvas>
+<div class="layout">
+<div class="frame">
+
+  <div class="eyebrow">Today's dollars · nothing leaves your device</div>
+  <h1>Your retirement,<br><em class="acc">assembled.</em></h1>
+  <p class="lede">Enter what your statements say <b>today</b> — the tool projects the rest. Each stream joins <b>the Stack</b>, live as you change anything, anywhere.</p>
+
+  <!-- 01 ABOUT YOU -->
+  <section class="card open" id="c-you" style="--stream:var(--text)">
+    <div class="card-head" data-card="c-you">
+      <div class="num">01</div>
+      <div style="flex:1"><div class="card-title">About you</div><div class="card-sub">Sets eligibility and multipliers everywhere</div></div>
+      <div class="chip zero" id="chip-you">—</div>
+      <svg class="caret" width="14" height="14" viewBox="0 0 14 14"><path d="M2 5l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    </div>
+    <div class="card-body">
+      <div class="row2 field">
+        <div>
+          <label for="birth">Your birthdate</label>
+          <input type="date" id="birth" value="1974-03-15" min="1940-01-01" max="2008-12-31">
+        </div>
+        <div>
+          <label>Sex — for the lifespan estimate</label>
+          <div class="seg seg-tall" id="sexSeg">
+            <button class="on" data-v="m">Male</button>
+            <button data-v="f">Female</button>
+          </div>
+        </div>
+      </div>
+      <div class="note" id="lifeNote"></div>
+      <div class="field">
+        <div class="slider-wrap"><label for="retAge" style="margin:0">Age you'll retire from federal service</label><span class="slider-val" id="v-retAge">57</span></div>
+        <input type="range" id="retAge" min="50" max="70" value="57">
+      </div>
+      <div class="field">
+        <label>Goal income — how it's set</label>
+        <div class="seg" id="goalMode">
+          <button class="on" data-v="pct">% of salary</button>
+          <button data-v="amt">$ amount</button>
+        </div>
+      </div>
+      <div class="field">
+        <label for="goalVal" id="goalLabel">Goal — % of current salary</label>
+        <input type="number" id="goalVal" value="80" min="0" step="5" inputmode="numeric">
+      </div>
+      <div class="note" id="goalNote"></div>
+      <div class="row2 field">
+        <div>
+          <label>Tax filing status</label>
+          <div class="seg seg-tall" id="filingSeg">
+            <button class="on" data-v="single">Single</button>
+            <button data-v="mfj">Married joint</button>
+          </div>
+        </div>
+        <div>
+          <label for="stateTax">State income tax, flat %</label>
+          <input type="number" id="stateTax" value="0" min="0" max="15" step="0.5" inputmode="decimal">
+        </div>
+      </div>
+      <div class="note">Used only for the after-tax estimate in the summary. Enter your state's effective rate — many states exempt military retired pay and Social Security, so lean low.</div>
+      <div class="nav-row"><button class="btn nav-next" data-nav="next">Next · Military</button></div>
+    </div>
+  </section>
+
+  <!-- 02 MILITARY -->
+  <section class="card locked" id="c-mil" style="--stream:var(--amber)">
+    <div class="card-head" data-card="c-mil">
+      <div class="num">02</div>
+      <div style="flex:1"><div class="card-title">Military service</div><div class="card-sub">Retired pay — or years you can buy back</div></div>
+      <div class="chip zero" id="chip-mil">$0/mo</div>
+      <svg class="caret" width="14" height="14" viewBox="0 0 14 14"><path d="M2 5l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    </div>
+    <div class="card-body">
+      <div class="switch-row" style="margin-top:15px">
+        <div><div class="lab">I served in the military</div><div class="sub">Off if you never served — the section marks n/a</div></div>
+        <label class="toggle"><input type="checkbox" id="milServed" checked><span></span></label>
+      </div>
+      <div id="milBody">
+        <div class="field">
+          <label>Where you stand</label>
+          <div class="seg" id="milStatus">
+            <button class="on" data-v="receiving">Receiving pay</button>
+            <button data-v="calc">Will retire</button>
+            <button data-v="separated">Separated</button>
+          </div>
+        </div>
+        <div class="row2 field" id="milActualField">
+          <div><label for="milActual">Gross retired pay $/mo</label><input type="number" id="milActual" value="4900" min="0" step="50" inputmode="numeric"></div>
+          <div><label for="milYearsA">Years you served</label><input type="number" id="milYearsA" value="20" min="0" max="40" inputmode="numeric"></div>
+        </div>
+        <div id="milCalc" style="display:none">
+          <div class="field">
+            <label>Retirement system</label>
+            <div class="seg" id="milSys">
+              <button class="on" data-v="high3">High-3 · 2.5%</button>
+              <button data-v="brs">BRS · 2.0%</button>
+            </div>
+          </div>
+          <div class="row2 field">
+            <div><label for="milYears">Years you'll have served</label><input type="number" id="milYears" value="20" min="0" max="40" inputmode="numeric"></div>
+            <div><label for="milHigh3">High-3 basic pay $/mo</label><input type="number" id="milHigh3" value="9800" min="0" step="100" inputmode="numeric"></div>
+          </div>
+          <div class="note">Retired pay = high-3 basic pay × years × multiplier. COLA'd for life. Taxable federally; many states exempt it.</div>
+        </div>
+        <div id="milSep" style="display:none">
+          <div class="field">
+            <label for="milYearsS">Years you served</label>
+            <input type="number" id="milYearsS" value="20" min="0" max="40" inputmode="numeric">
+          </div>
+          <div class="note">Separating without retiring means no retired pay — but every one of those years can be <b>bought back</b> into FERS (04), with nothing to waive.</div>
+        </div>
+      </div>
+      <div class="nav-row"><button class="btn ghost nav-back" data-nav="back">Back</button><button class="btn nav-next" data-nav="next">Next · VA disability</button></div>
+    </div>
+  </section>
+
+  <!-- 03 VA -->
+  <section class="card locked" id="c-va" style="--stream:var(--sage)">
+    <div class="card-head" data-card="c-va">
+      <div class="num">03</div>
+      <div style="flex:1"><div class="card-title">VA disability</div><div class="card-sub"><span class="taxfree">Tax-free</span> · never touches your brackets</div></div>
+      <div class="chip zero" id="chip-va">$0/mo</div>
+      <svg class="caret" width="14" height="14" viewBox="0 0 14 14"><path d="M2 5l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    </div>
+    <div class="card-body">
+      <div class="switch-row" style="margin-top:15px">
+        <div><div class="lab">I have a VA disability rating</div><div class="sub">Off if you've never filed or have no rating</div></div>
+        <label class="toggle"><input type="checkbox" id="hasVa" checked><span></span></label>
+      </div>
+      <div id="vaBody">
+        <div class="field">
+          <label for="vaRating">Combined rating</label>
+          <select id="vaRating">
+            <option value="10">10%</option><option value="20">20%</option>
+            <option value="30">30%</option><option value="40">40%</option>
+            <option value="50">50%</option><option value="60">60%</option>
+            <option value="70" selected>70%</option><option value="80">80%</option>
+            <option value="90">90%</option><option value="100">100%</option>
+          </select>
+        </div>
+        <div id="vaDeps">
+          <div class="field">
+            <label>Household — VA pays more at 30%+ with dependents</label>
+            <div class="seg" id="vaSpouse">
+              <button class="on" data-v="0">Single</button>
+              <button data-v="1">Married</button>
+            </div>
+          </div>
+          <div class="row2 field">
+            <div><label for="vaKids">Children under 18</label><input type="number" id="vaKids" value="0" min="0" max="8" inputmode="numeric"></div>
+            <div><label for="vaParents">Dependent parents</label><input type="number" id="vaParents" value="0" min="0" max="2" inputmode="numeric"></div>
+          </div>
+        </div>
+        <div class="note" id="vaNote"></div>
+      </div>
+      <div class="nav-row"><button class="btn ghost nav-back" data-nav="back">Back</button><button class="btn nav-next" data-nav="next">Next · Federal service</button></div>
+    </div>
+  </section>
+
+  <!-- 04 FEDERAL -->
+  <section class="card locked" id="c-fed" style="--stream:var(--fed)">
+    <div class="card-head" data-card="c-fed">
+      <div class="num">04</div>
+      <div style="flex:1"><div class="card-title">Federal service · FERS</div><div class="card-sub">Your civilian annuity — and the buyback question</div></div>
+      <div class="chip zero" id="chip-fed">$0/mo</div>
+      <svg class="caret" width="14" height="14" viewBox="0 0 14 14"><path d="M2 5l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    </div>
+    <div class="card-body">
+      <div class="switch-row" style="margin-top:15px">
+        <div><div class="lab">I'm a federal civilian (FERS)</div><div class="sub">Off if you've never held a covered federal position</div></div>
+        <label class="toggle"><input type="checkbox" id="hasFed" checked><span></span></label>
+      </div>
+      <div id="fedBody">
+        <div class="field">
+          <label>Position type</label>
+          <div class="seg" id="fedType">
+            <button class="on" data-v="reg">Regular FERS</button>
+            <button data-v="special">LEO / FF / ATC · 1.7%</button>
+          </div>
+        </div>
+        <div class="row2 field">
+          <div><label for="scd">Service Computation Date</label><input type="date" id="scd" value="2014-06-01" min="1970-01-01" max="2026-12-31"></div>
+          <div><label for="fedHigh3">Current salary $/yr</label><input type="number" id="fedHigh3" value="165000" min="0" step="1000" inputmode="numeric"></div>
+        </div>
+        <div class="row2 field">
+          <div><label for="sickHours">Sick leave balance, hours</label><input type="number" id="sickHours" value="0" min="0" step="10" inputmode="numeric"></div>
+          <div>
+            <label>Survivor benefit election</label>
+            <div class="seg" id="survivor">
+              <button class="on" data-v="none">None</button>
+              <button data-v="partial">25% · −5%</button>
+              <button data-v="full">50% · −10%</button>
+            </div>
+          </div>
+        </div>
+        <div class="note" id="fedYearsNote"></div>
+        <div class="note" id="srsNote" style="display:none"></div>
+        <div class="switch-row" id="buybackRow">
+          <div><div class="lab">Buy back my military time</div><div class="sub" id="buybackSub"></div></div>
+          <label class="toggle"><input type="checkbox" id="buyback"><span></span></label>
+        </div>
+        <div class="note" id="buybackNote" style="display:none"></div>
+        <div class="note">Annuity = high-3 × creditable years × multiplier (1.1% at 62+ with 20 years, else 1.0%). Your current salary stands in for your high-3 in today's dollars — a slightly conservative floor. Sick leave converts at 2,087 hours = 1 year, computation only.</div>
+      </div>
+      <div class="nav-row"><button class="btn ghost nav-back" data-nav="back">Back</button><button class="btn nav-next" data-nav="next">Next · Social Security</button></div>
+    </div>
+  </section>
+
+  <!-- 05 SOCIAL SECURITY -->
+  <section class="card locked" id="c-ss" style="--stream:var(--slate)">
+    <div class="card-head" data-card="c-ss">
+      <div class="num">05</div>
+      <div style="flex:1"><div class="card-title">Social Security</div><div class="card-sub">One number off your statement — exact claim math from there</div></div>
+      <div class="chip zero" id="chip-ss">$0/mo</div>
+      <svg class="caret" width="14" height="14" viewBox="0 0 14 14"><path d="M2 5l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    </div>
+    <div class="card-body">
+      <div class="field">
+        <label for="ssBase">Your benefit at Full Retirement Age $/mo</label>
+        <input type="number" id="ssBase" value="3100" min="0" step="50" inputmode="numeric">
+      </div>
+      <div class="note">One number, straight off your statement: log in at <a href="https://www.ssa.gov/myaccount/" target="_blank" rel="noopener">ssa.gov/myaccount</a> and copy the amount from the line <b>&ldquo;Your monthly benefit at your Full Retirement Age (FRA)&hellip;&rdquo;</b>. Your FRA from your birth year is <b id="fraTxt">67</b>.</div>
+      <div class="field">
+        <div class="slider-wrap"><label for="ssAge" style="margin:0">Claim at age</label><span class="slider-val" id="v-ssAge">67</span></div>
+        <input type="range" id="ssAge" min="62" max="70" value="67">
+      </div>
+      <div class="note" id="ssCurveNote"></div>
+      <div class="nav-row"><button class="btn ghost nav-back" data-nav="back">Back</button><button class="btn nav-next" data-nav="next">Next · TSP</button></div>
+    </div>
+  </section>
+
+  <!-- 06 TSP -->
+  <section class="card locked" id="c-tsp" style="--stream:var(--copper)">
+    <div class="card-head" data-card="c-tsp">
+      <div class="num">06</div>
+      <div style="flex:1"><div class="card-title">TSP</div><div class="card-sub">Your savings, drawn down on your terms</div></div>
+      <div class="chip zero" id="chip-tsp">$0/mo</div>
+      <svg class="caret" width="14" height="14" viewBox="0 0 14 14"><path d="M2 5l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    </div>
+    <div class="card-body">
+      <div class="row2 field">
+        <div><label for="tspBal">Balance today $</label><input type="number" id="tspBal" value="620000" min="0" step="10000" inputmode="numeric"></div>
+        <div><label for="tspRothPct">Roth share of it %</label><input type="number" id="tspRothPct" value="0" min="0" max="100" step="5" inputmode="numeric"></div>
+      </div>
+      <div class="field">
+        <label>Your contribution — how you set it</label>
+        <div class="seg" id="tspContribMode">
+          <button class="on" data-v="pct">% of salary</button>
+          <button data-v="amt">$ / year</button>
+        </div>
+      </div>
+      <div class="field">
+        <label for="tspContribVal" id="tspContribLabel">You contribute — % of salary</label>
+        <div class="input-btn">
+          <input type="number" id="tspContribVal" value="5" min="0" step="1" inputmode="decimal">
+          <button class="btn ghost" id="tspMaxBtn" title="Set to the IRS annual limit for your age">Max</button>
+        </div>
+      </div>
+      <div class="field">
+        <label>Agency additions</label>
+        <div class="seg" id="tspMatchSeg">
+          <button class="on" data-v="full">FERS / BRS</button>
+          <button data-v="custom">Custom %</button>
+          <button data-v="none">CSRS · none</button>
+        </div>
+      </div>
+      <div class="field" id="tspMatchCustomField" style="display:none">
+        <label for="tspMatchPct">Agency adds — % of salary</label>
+        <input type="number" id="tspMatchPct" value="5" min="0" max="10" step="0.5" inputmode="decimal">
+      </div>
+      <div class="note" id="tspAddNote"></div>
+      <div class="row2 field">
+        <div><label for="tspGrow">Growth above inflation %/yr</label><input type="number" id="tspGrow" value="4" min="0" max="10" step="0.5" inputmode="decimal"></div>
+        <div><label for="tspRate">Withdrawal %/yr</label><input type="number" id="tspRate" value="4" min="0" max="10" step="0.5" inputmode="decimal"></div>
+      </div>
+      <div class="note" id="tspProj"></div>
+      <div class="note">The FERS/BRS formula hasn't changed since TSP began in 1987: automatic 1% + full match on your first 3% + half on the next 2% — agency max 5%, yours at 5%. What varies by hire date is your FERS <i>pension</i> withholding (0.8% / 3.1% / 4.4%), which doesn't touch the match. Roth and traditional receive the same match (always traditional). Growth above inflation keeps everything in today's dollars; the 4% withdrawal rule is a 30-year starting point — early retirees often use 3–3.5%.</div>
+      <div class="nav-row"><button class="btn ghost nav-back" data-nav="back">Back</button><button class="btn nav-next" data-nav="next">Next · Savings &amp; other</button></div>
+    </div>
+  </section>
+
+  <!-- 07 SAVINGS & OTHER INCOME -->
+  <section class="card locked" id="c-sav" style="--stream:var(--sav)">
+    <div class="card-head" data-card="c-sav">
+      <div class="num">07</div>
+      <div style="flex:1"><div class="card-title">Savings &amp; other income</div><div class="card-sub">Brokerage, cash, rentals, a business</div></div>
+      <div class="chip zero" id="chip-sav">$0/mo</div>
+      <svg class="caret" width="14" height="14" viewBox="0 0 14 14"><path d="M2 5l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    </div>
+    <div class="card-body">
+      <div class="row2 field">
+        <div><label for="savBal">Savings &amp; brokerage today $</label><input type="number" id="savBal" value="80000" min="0" step="5000" inputmode="numeric"></div>
+        <div><label for="savContrib">Adding $/yr</label><input type="number" id="savContrib" value="6000" min="0" step="500" inputmode="numeric"></div>
+      </div>
+      <div class="row2 field">
+        <div><label for="savGrow">Growth above inflation %/yr</label><input type="number" id="savGrow" value="3" min="0" max="10" step="0.5" inputmode="decimal"></div>
+        <div><label for="savRate">Withdrawal %/yr</label><input type="number" id="savRate" value="4" min="0" max="10" step="0.5" inputmode="decimal"></div>
+      </div>
+      <div class="note" id="savProj"></div>
+      <div class="field">
+        <label for="othIncome">Other steady income $/mo — rentals, business, other pensions</label>
+        <input type="number" id="othIncome" value="0" min="0" step="100" inputmode="numeric">
+      </div>
+      <div class="note">Other income is taken as steady in today's dollars for life — a simplification you control by what you enter.</div>
+      <div class="nav-row"><button class="btn ghost nav-back" data-nav="back">Back</button><button class="btn nav-next" data-nav="next">See the full picture</button></div>
+    </div>
+  </section>
+
+  <!-- Σ SUMMARY -->
+  <section class="card summary locked" id="c-sum" style="--stream:var(--amber)">
+    <div class="card-head" data-card="c-sum">
+      <div class="num" style="font-style:normal">Σ</div>
+      <div style="flex:1"><div class="card-title">The full picture</div><div class="card-sub">Every stream, one number — and when to go</div></div>
+      <svg class="caret" width="14" height="14" viewBox="0 0 14 14"><path d="M2 5l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    </div>
+    <div class="card-body">
+      <div class="big-num" id="sumTotal">$0</div>
+      <div class="big-cap">combined income per month, of which <b id="sumTaxfree" style="color:var(--sage)">$0</b> is tax-free</div>
+      <div class="big-nominal" id="sumNominal"></div>
+
+      <div class="rec" id="recBanner">
+        <div class="rec-title" id="recTitle"></div>
+        <div class="rec-sub" id="recSub"></div>
+      </div>
+      <div class="field">
+        <label>Income at retirement, by departure age</label>
+        <canvas id="optChart" style="width:100%;height:130px;display:block;border-radius:12px;background:var(--surface2);border:1px solid var(--line)"></canvas>
+        <div class="dock-foot" style="margin-top:6px"><span id="optL"></span><span id="optR"></span></div>
+      </div>
+      <div class="kgrid" id="cmpCards"></div>
+      <div class="note" id="cmpDelta" style="margin-top:10px"></div>
+
+      <div class="field">
+        <label>Income by age — today's dollars</label>
+        <canvas id="incomeChart" style="width:100%;height:150px;display:block;border-radius:12px;background:var(--surface2);border:1px solid var(--line)"></canvas>
+        <div class="dock-foot" style="margin-top:6px"><span id="chartL"></span><span id="chartR"></span></div>
+      </div>
+      <div class="field">
+        <label>Net worth by age — TSP + savings</label>
+        <canvas id="nwChart" style="width:100%;height:120px;display:block;border-radius:12px;background:var(--surface2);border:1px solid var(--line)"></canvas>
+        <div class="dock-foot" style="margin-top:6px"><span id="nwL"></span><span id="nwR"></span></div>
+      </div>
+
+      <div class="kgrid">
+        <div class="kcell"><div class="kv" id="kFloor">—</div><div class="kl">Guaranteed floor — pensions, VA &amp; SS; never depletes</div></div>
+        <div class="kcell"><div class="kv" id="kNet">—</div><div class="kl" id="kNetLbl">After estimated taxes</div></div>
+        <div class="kcell"><div class="kv" id="kNwRet">—</div><div class="kl">Net worth at retirement</div></div>
+        <div class="kcell"><div class="kv" id="kNwEnd">—</div><div class="kl" id="kNwEndLbl">Net worth at the horizon</div></div>
+        <div class="kcell"><div class="kv" id="kTspDry">—</div><div class="kl" id="kTspDryLbl">TSP runs dry</div></div>
+        <div class="kcell"><div class="kv" id="kSavDry">—</div><div class="kl" id="kSavDryLbl">Savings run dry</div></div>
+      </div>
+      <div class="note" id="taxNote" style="margin-top:12px"></div>
+
+      <div class="legend" id="legend"></div>
+      <div style="display:flex;gap:10px;margin-top:18px;flex-wrap:wrap">
+        <button class="btn" id="printBtn">Print / save as PDF</button>
+        <button class="btn ghost" id="csvBtn">Download CSV</button>
+        <button class="btn ghost" id="exportBtn">Export JSON</button>
+        <button class="btn ghost" id="importBtn">Import</button>
+        <input type="file" id="importFile" accept="application/json" hidden>
+      </div>
+    </div>
+  </section>
+
+  <footer>Estimates and observations in today's dollars — not financial advice. Everything runs and saves on your device only. <a href="#" id="legalLink">Disclosures &amp; privacy</a> · <a href="#" id="resetLink">Start over</a></footer>
+</div>
+
+<!-- DOCK / RAIL -->
+<aside class="rail">
+<div class="dock">
+  <div class="dock-inner">
+    <div class="dock-top">
+      <span class="dock-label">The <em>Stack</em> · monthly income</span>
+      <span class="dock-num" id="dockNum">$0<small>/mo</small></span>
+    </div>
+    <div class="stack" id="stackBar">
+      <div class="s-mil" style="width:0"></div><div class="s-va" style="width:0"></div>
+      <div class="s-fers" style="width:0"></div><div class="s-ss" style="width:0"></div>
+      <div class="s-tsp" style="width:0"></div><div class="s-sav" style="width:0"></div>
+      <div class="s-oth" style="width:0"></div>
+    </div>
+    <div class="dock-foot"><span id="dockHint">Start with your ages above</span><span id="dockYr">$0/yr</span></div>
+    <div class="rail-stats" id="railStats"></div>
+    <div class="legend rail-legend" id="railLegend"></div>
+  </div>
+</div>
+</aside>
+</div>
+
+<!-- PRINT REPORT (built at print time) -->
+<div id="report"></div>
+
+<!-- DISCLOSURES & PRIVACY -->
+<dialog id="legalModal" aria-labelledby="legalTitle">
+  <div class="modal-head">
+    <div class="modal-title" id="legalTitle">Disclosures &amp; <em class="acc">privacy</em></div>
+    <button class="btn ghost" id="legalClose" autofocus>Close</button>
+  </div>
+  <div class="modal-body">
+    <h3>What this tool is</h3>
+    <p>Assembled produces <b>estimates and observations</b> from the numbers you enter — it is not financial, legal, tax, or investment advice, and it is not a recommendation to retire, claim, buy back service, or elect anything. Decisions of this size deserve verification against your official sources: OPM, DFAS, VA, SSA, and TSP statements, and where it matters, a professional who can see your whole picture.</p>
+    <h3>Known simplifications</h3>
+    <p>Every figure is in today's dollars; growth assumptions are "above inflation." Your current salary stands in for the FERS high-3 (a conservative floor). VA rates use approximate 2026 tables. Social Security uses an approximate claim-age curve and, for pasted earnings tables, approximate wage indexing. The buyback deposit cost, CRDP/CRSC detail, taxes, and the FERS COLA gap before 62 are not yet modeled — each is flagged in place where it applies. Lifespan is a statistical estimate from public life tables adjusted for income; it is a planning horizon, not a prediction about you.</p>
+    <h3>Privacy</h3>
+    <p><b>Your data never leaves your device.</b> There is no server, no account, no analytics, and no tracking. Everything you type is computed in your browser and saved only to this browser's local storage; "Start over" erases it. Exports (JSON, CSV, PDF) are generated locally and go only where you put them. The single network request this page makes is for its typefaces from Google Fonts, which contains nothing you've entered. The downloadable single-file version makes no requests at all once saved.</p>
+    <h3>Affiliation</h3>
+    <p>Assembled is not affiliated with, endorsed by, or connected to OPM, DFAS, the VA, SSA, or any government agency.</p>
+  </div>
+</dialog>
+
+</body>
+</html>
