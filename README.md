@@ -14,7 +14,7 @@ Assembled models both systems and their interactions, then goes further: it does
 
 ## How it works
 
-You walk through seven short sections, entering only numbers you can read off documents you already have — your DFAS statement, SF-50, LES, ssa.gov statement, TSP balance, VA award letter. The tool owns every projection. Sections that don't apply mark themselves n/a and step aside; a pure civilian and a pure military retiree both get a coherent path.
+You walk through eight short sections, entering only numbers you can read off documents you already have — your DFAS statement, SF-50, LES, ssa.gov statement, TSP balance, VA award letter. The tool owns every projection. Sections that don't apply mark themselves n/a and step aside; a pure civilian and a pure military retiree both get a coherent path.
 
 As you type, **the Stack** — your combined monthly retirement income, one color per stream — updates live in a pinned panel, along with your after-tax figure, guaranteed floor, and recommended retirement age.
 
@@ -35,6 +35,8 @@ A decisions chapter that answers the questions people actually argue about:
 - **Assumptions wrong?** — a stress test: inflation at 4%, growth halved, living to 100 — pass/fail against your goal.
 - **Retire somewhere else?** — all 50 states plus popular expat destinations (Portugal, Mexico, Costa Rica, Thailand…), ranked by what your after-tax income actually *spends like* — state taxes and cost of living together, military exemptions included.
 - **Leave federal service?** — the private-sector salary that breaks even on everything walking away forfeits: remaining accrual years, the match stream, the 1.1% upgrade on banked years, net of FERS withholding.
+- **You died first?** — what the survivor actually keeps: the FERS survivor annuity from your election, SBP if elected (with DIC stacking since the 2023 offset repeal), the Social Security step-up, their own streams, the inherited draw — against the household total, with the gap named.
+- **Converted to Roth in the gap?** — fill the 12/22/24% bracket in the years between retirement and Social Security, pay the tax cheap, shrink the RMDs. A directional sketch, labeled as such.
 
 ## What it models
 
@@ -46,7 +48,11 @@ A decisions chapter that answers the questions people actually argue about:
 | **Social Security** | FRA by birth year and SSA's exact claim factors; one number straight off your statement |
 | **TSP** | 2026 IRS limits with age-based catch-ups; %-of-salary, dollar, or max-every-year contributions; the real agency match formula; Roth share; RMDs at 73 (Uniform Lifetime Table); Rule of 55 / public-safety / SECURE 2.0 warnings |
 | **Taxes** | 2026 federal brackets, standard deduction incl. 65+, up-to-85% SS taxability, per-state treatment from a 50-state (+ abroad) data file, Medicare Part B with IRMAA tiers |
-| **Lifespan** | SSA life table by age and sex, income-adjusted; drives every horizon in the tool |
+| **Household** | A spouse's pension, Social Security (their own FRA and claim age), balance draws, and wages while working; joint taxes and IRMAA; the plan runs to the longer-lived of you |
+| **Survivor** | FERS survivor elections (valued from the unreduced annuity), SBP at 55% with its 6.5% premium charged while living, DIC, the SS step-up, inherited accounts |
+| **Disability** | FERS disability retirement: 60% year one, 40% minus the SSDI offset to 62, the earned-annuity floor, and the age-62 recompute with disability years credited |
+| **Health** | FEHB self / self+1 / family vs TRICARE (or both), premiums netted from income, with the FEHB 5-year rule flagged |
+| **Lifespan** | SSA life table by age and sex, income-adjusted; drives every horizon in the tool — for households, the longer-lived spouse sets it |
 
 All figures in **today's dollars** — growth assumptions are "above inflation," with one labeled line showing what the checks will nominally read in your retirement year. The assumptions behind everything (inflation, lifespan buffer, horizon, guaranteed-income discount rate) are exposed as **dials** you can turn.
 
@@ -54,7 +60,7 @@ All figures in **today's dollars** — growth assumptions are "above inflation,"
 
 Every simplification is labeled inline where it applies, with the direction of its error where known. Current salary stands in for high-3 (a conservative floor). The buyback deposit is an estimate until you enter the DFAS figure. VA tables are approximate for 2026. State rates and cost-of-living indexes are coarse estimates. The lifespan figure is a statistical average, not a prediction. This is an estimate machine, not advice — and it says so.
 
-The math is locked by **129 automated tests**, including golden tests against published OPM computation examples, SSA's exact reduction/credit factors, the TSP match schedule, and the DFAS formula.
+The math is locked by **143 automated tests**, including golden tests against published OPM computation examples, SSA's exact reduction/credit factors, the TSP match schedule, and the DFAS formula.
 
 ## Privacy
 
@@ -67,7 +73,7 @@ Vanilla JavaScript, no framework, no runtime dependencies. One state object → 
 ```
 npm install
 npm run dev      # local dev server
-npm test         # vitest — 129 tests; correctness is the product
+npm test         # vitest — 143 tests; correctness is the product
 npm run build    # dist/ → index.html + sw.js + manifest.webmanifest + README
 ```
 
@@ -89,7 +95,7 @@ Design rules, if you contribute: inputs must be readable off a statement the use
 
 ## Roadmap
 
-Spouse and dual-fed household modeling → survivor scenarios (SBP/DIC — the military side no other tool prices) → FERS disability retirement → FEHB/TRICARE premium comparison → Roth conversion ladder.
+The original roadmap — spouse/dual-fed households, survivor scenarios (SBP/DIC), FERS disability, FEHB/TRICARE comparison, and the Roth conversion ladder — has shipped. Next: deeper survivor modeling (FEGLI, reverse scenario), exact SSA earnings-record math, VA official tables, and annual data refreshes.
 
 **Not** on the roadmap: accounts, backends, ads, affiliate anything, or advice.
 
