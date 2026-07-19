@@ -22,4 +22,4 @@ jobs:
         password: ${{ secrets.SFTP_PASSWORD }}
         port: 22
         local_path: './'      # Changed from local_dir
-        remote_path: '/retire/'  # Changed from remote_dir (Update to your actual hosting path)
+        remote_path: '/i6d/retire/'  # Changed from remote_dir (Update to your actual hosting path)
