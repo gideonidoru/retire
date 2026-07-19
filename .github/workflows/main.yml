@@ -21,5 +21,7 @@ jobs:
         server: ${{ secrets.SFTP_HOST }}
         password: ${{ secrets.SFTP_PASSWORD }}
         port: 22
-        local_path: './'      # Changed from local_dir
-        remote_path: 'i6d/retire/'  # Changed from remote_dir (Update to your actual hosting path)
+        local_path: './'
+        remote_path: 'i6d/retire/'
+        # Added the .DS_Store filter right at the end
+        rsyncArgs: '--exclude=.git --exclude=.github --exclude=.DS_Store' 
