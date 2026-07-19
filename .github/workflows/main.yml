@@ -1,12 +1,10 @@
 name: Deploy Website over SFTP
 
-# 1. This tells GitHub WHEN to run the action (on every push to the main branch)
 on:
   push:
     branches:
       - main
 
-# 2. This defines the steps the runner machine will execute
 jobs:
   web-deploy:
     name: 🎉 Deploy
@@ -23,5 +21,5 @@ jobs:
         server: ${{ secrets.SFTP_HOST }}
         password: ${{ secrets.SFTP_PASSWORD }}
         port: 22
-        local_dir: '.'
-        remote_dir: '/retire/' # Change this to your server's actual target folder
+        local_path: './'      # Changed from local_dir
+        remote_path: '/retire/'  # Changed from remote_dir (Update to your actual hosting path)
