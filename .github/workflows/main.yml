@@ -23,5 +23,5 @@ jobs:
         port: 22
         local_path: './'
         remote_path: 'i6d/retire/'
-        # Added the .DS_Store filter right at the end
-        rsyncArgs: '--exclude=.git --exclude=.github --exclude=.DS_Store' 
+        # Passes exclusion flags directly to the underlying transfer command
+        sftpArgs: '-F /dev/null -o Globals=none --exclude=.git/ --exclude=.github/ --exclude=.DS_Store'
