@@ -1,9 +1,27 @@
+name: Deploy Website over SFTP
+
+# 1. This tells GitHub WHEN to run the action (on every push to the main branch)
+on:
+  push:
+    branches:
+      - main
+
+# 2. This defines the steps the runner machine will execute
+jobs:
+  web-deploy:
+    name: 🎉 Deploy
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: 🚚 Get latest code
+      uses: actions/checkout@v4
+
     - name: 🚀 SFTP Deploy
       uses: wlixcc/SFTP-Deploy-Action@v1.2.4
       with:
         username: ${{ secrets.SFTP_USERNAME }}
         server: ${{ secrets.SFTP_HOST }}
-        password: ${{ secrets.SFTP_PASSWORD }} # Delete this line if using an SSH key instead
+        password: ${{ secrets.SFTP_PASSWORD }}
         port: 22
-        local_dir: '.' # The folder in GitHub you want to upload ('.' uploads everything)
-        remote_dir: '/retire/' # Replace with your actual server destination path
+        local_dir: '.'
+        remote_dir: '/retire/' # Change this to your server's actual target folder
