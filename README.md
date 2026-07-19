@@ -33,7 +33,7 @@ A decisions chapter that answers the questions people actually argue about:
 - **Claim Social Security later?** — cumulative lifetime totals for 62 / FRA / 70 with the crossover ages, tied to your lifespan estimate.
 - **Buy back your military time?** — the net monthly effect (waiver included), the estimated deposit, and the break-even age. Shown while the decision is still open.
 - **Assumptions wrong?** — a stress test: inflation at 4%, growth halved, living to 100 — pass/fail against your goal.
-- **Retire somewhere else?** — all 50 states plus popular expat destinations (Portugal, Mexico, Costa Rica, Thailand…), ranked by after-tax income for *your* mix, military exemptions included.
+- **Retire somewhere else?** — all 50 states plus popular expat destinations (Portugal, Mexico, Costa Rica, Thailand…), ranked by what your after-tax income actually *spends like* — state taxes and cost of living together, military exemptions included.
 - **Leave federal service?** — the private-sector salary that breaks even on everything walking away forfeits: remaining accrual years, the match stream, the 1.1% upgrade on banked years, net of FERS withholding.
 
 ## What it models
@@ -52,7 +52,7 @@ All figures in **today's dollars** — growth assumptions are "above inflation,"
 
 ## Honesty policy
 
-Every simplification is labeled inline where it applies, with the direction of its error where known. Current salary stands in for high-3 (a conservative floor). The buyback deposit is an estimate until you enter the DFAS figure. VA tables are approximate for 2026. State rates are flat effective estimates. The lifespan figure is a statistical average, not a prediction. This is an estimate machine, not advice — and it says so.
+Every simplification is labeled inline where it applies, with the direction of its error where known. Current salary stands in for high-3 (a conservative floor). The buyback deposit is an estimate until you enter the DFAS figure. VA tables are approximate for 2026. State rates and cost-of-living indexes are coarse estimates. The lifespan figure is a statistical average, not a prediction. This is an estimate machine, not advice — and it says so.
 
 The math is locked by **129 automated tests**, including golden tests against published OPM computation examples, SSA's exact reduction/credit factors, the TSP match schedule, and the DFAS formula.
 
@@ -68,7 +68,7 @@ Vanilla JavaScript, no framework, no runtime dependencies. One state object → 
 npm install
 npm run dev      # local dev server
 npm test         # vitest — 129 tests; correctness is the product
-npm run build    # dist/ → index.html + sw.js + manifest.webmanifest
+npm run build    # dist/ → index.html + sw.js + manifest.webmanifest + README
 ```
 
 ```
