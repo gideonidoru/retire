@@ -3,6 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<!-- The browser enforces the privacy promise: no connection to anywhere but
+     this origin (and the two font files) is even possible. Verifiable here. -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'">
 <title>Assembled — your retirement, stream by stream</title>
 <meta name="description" content="Federal + military retirement calculator. FERS, military retired pay, VA disability, Social Security, TSP — assembled into one live monthly number. 100% private, runs entirely on your device.">
 <meta name="theme-color" content="#05080F">
@@ -837,7 +840,7 @@
     <h3>Known simplifications</h3>
     <p>Every figure is in today's dollars; growth assumptions are "above inflation." Your current salary stands in for the FERS high-3 unless you set the salary-growth dial (a conservative floor). VA rates use the official 2026 tables (effective December 1, 2025). Social Security uses SSA's exact claim-age factors; pasted earnings tables use approximate wage indexing. Taxes, the buyback deposit, and CRDP/CRSC offsets are estimates, not filings — each flagged in place where it applies. Lifespan is a statistical estimate from public life tables adjusted for income; it is a planning horizon, not a prediction about you.</p>
     <h3>Privacy</h3>
-    <p><b>Your data never leaves your device.</b> There is no server, no account, no analytics, and no tracking. Everything you type is computed in your browser and saved only to this browser's local storage; "Start over" erases it. Exports (JSON, XLSX, PDF) are generated locally and go only where you put them. The single network request this page makes is for its typefaces from Google Fonts, which contains nothing you've entered. The downloadable single-file version makes no requests at all once saved.</p>
+    <p><b>Your data never leaves your device.</b> There is no server, no account, no analytics, and no tracking — and the page carries a Content-Security-Policy, so the browser itself blocks any connection except this site and the typefaces. That is enforced, not promised; view the page source to verify. Everything you type is computed in your browser and saved only to this browser's local storage; "Start over" erases it. Exports (JSON, XLSX, PDF) are generated locally and go only where you put them. The single network request this page makes is for its typefaces from Google Fonts, which contains nothing you've entered. The downloadable single-file version makes no requests at all once saved.</p>
     <h3>Affiliation</h3>
     <p>Assembled is not affiliated with, endorsed by, or connected to OPM, DFAS, the VA, SSA, or any government agency. Curious where the numbers come from? See <a href="#" id="methodLink2">How it computes</a>.</p>
   </div>
