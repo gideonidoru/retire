@@ -42,8 +42,8 @@ A decisions chapter that answers the questions people actually argue about:
 
 | Area | Depth |
 |---|---|
-| **FERS** | MRA by birth year; every eligibility path (62+5, 60+20, MRA+30, MRA+10 with exact reductions, deferred by service — 30 years commences at the MRA, 20 at 60, else 62); VERA early-outs (immediate and unreduced, supplement held to the MRA, VSIP into savings); special provisions (LEO/FF/ATC/CBP, 1.7%, immediate SRS); already-separated support (frozen service, deferred rules); the SRS on civilian years only; sick-leave credit incl. the 1.1% test (OPM BAL 18-103); survivor elections; an optional real salary-growth dial that projects a true high-3; the pre-62 COLA gap and diet COLA modeled in real terms |
-| **Military** | Receiving / will-retire / separated paths; High-3 (75% cap) and BRS; buyback with waiver math and the deposit deducted from savings; CRDP at 50%+ and the sub-50% waiver (CRSC restore); per-state retired-pay tax exemptions |
+| **FERS** | MRA by birth year; every eligibility path (62+5, 60+20, MRA+30, MRA+10 with exact reductions — or postponed, starting unreduced at 60 or 62 with sick leave intact; deferred by service — 30 years commences at the MRA, 20 at 60, else 62); VERA early-outs (immediate and unreduced, supplement held to the MRA, VSIP into savings); special provisions (LEO/FF/ATC/CBP, 1.7% on covered service only, a covered-years field for job-changers, the 57/56 mandatory-separation flag, immediate SRS); already-separated and already-retired support (frozen service and deferred rules — or your OPM statement gross, verbatim); the annual-leave payout into savings at separation; court-ordered former-spouse apportionment off the top; the SRS on civilian years only; sick-leave credit incl. the 1.1% test (OPM BAL 18-103); survivor elections; an optional real salary-growth dial that projects a true high-3; the pre-62 COLA gap and diet COLA modeled in real terms |
+| **Military** | Receiving / will-retire / separated paths; High-3 (75% cap) and BRS; Reserve/Guard points-based pay (points ÷ 360, deferred to 60 — earlier with qualifying post-9/11 active duty, and exempt from the buyback waiver); buyback with waiver math and the deposit deducted from savings; CRDP at 50%+ and the sub-50% waiver (CRSC restore); court-ordered former-spouse apportionment (USFSPA); per-state retired-pay tax exemptions |
 | **VA** | Ratings 10–100% with the full dependent matrix — or your award letter verbatim (SMC and combinations included); tax-free everywhere it should be |
 | **Social Security** | FRA by birth year and SSA's exact claim factors; one number straight off your statement, trimmed honestly if you stop earning early |
 | **TSP** | 2026 IRS limits with age-based catch-ups; %-of-salary, dollar, or max-every-year contributions; the real agency match formula; Roth share; draw start ages and one-time withdrawals; RMDs at 73 or 75 by birth year (SECURE 2.0, Uniform Lifetime Table); Rule of 55 / public-safety warnings with the 10% penalty in the after-tax math |
@@ -60,7 +60,7 @@ All figures in **today's dollars** — growth assumptions are "above inflation,"
 
 Every simplification is labeled inline where it applies, with the direction of its error where known. Current salary stands in for high-3 unless you set the salary-growth dial (a conservative floor). The buyback deposit is an estimate until you enter the DFAS figure — either way it's deducted from your savings, because it's real money. VA tables are the official 2026 rates, verified against va.gov. State rates and cost-of-living indexes are coarse estimates. The lifespan figure is a statistical average, not a prediction. This is an estimate machine, not advice — and it says so.
 
-The math is locked by **172 unit tests and a browser smoke suite**, including golden tests against published OPM computation examples, SSA's exact reduction/credit factors, the TSP match schedule, and the DFAS formula.
+The math is locked by **194 unit tests and a browser smoke suite**, including golden tests against published OPM computation examples, SSA's exact reduction/credit factors, the TSP match schedule, and the DFAS formula.
 
 ## Privacy
 
@@ -73,7 +73,7 @@ Vanilla JavaScript, no framework, no runtime dependencies. One state object → 
 ```
 npm install
 npm run dev      # local dev server
-npm test         # vitest — 172 tests; `npm run test:e2e` boots the built app in Chromium; correctness is the product
+npm test         # vitest — 194 tests; `npm run test:e2e` boots the built app in Chromium; correctness is the product
 npm run build    # dist/ → index.html + sw.js + manifest.webmanifest + README
 ```
 
@@ -95,7 +95,7 @@ Design rules, if you contribute: inputs must be readable off a statement the use
 
 ## Roadmap
 
-The original roadmap — spouse/dual-fed households, survivor scenarios in both directions (SBP/DIC and the widow's tax trap), FERS disability, FEHB/TRICARE comparison, and the Roth conversion ladder — has shipped. Next: an early-stop Social Security adjustment (statement numbers assume you keep working — the full AIME/PIA engine can correct that for early retirees), VA table verification for the remaining dependent combinations, and the January data refresh each year. A built-in staleness guard flags the footer if the tables' year falls behind the calendar. FEGLI is parked unless users ask.
+The original roadmap — spouse/dual-fed households, survivor scenarios in both directions (SBP/DIC and the widow's tax trap), FERS disability, FEHB/TRICARE comparison, and the Roth conversion ladder — has shipped. Next: upgrading the early-stop Social Security adjustment from bend-point inversion to a full AIME/PIA engine, and the January data refresh each year. A built-in staleness guard flags the footer if the tables' year falls behind the calendar. FEGLI is parked unless users ask.
 
 **Not** on the roadmap: accounts, backends, ads, affiliate anything, or advice.
 
