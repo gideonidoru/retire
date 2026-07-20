@@ -58,7 +58,7 @@ All figures in **today's dollars** — growth assumptions are "above inflation,"
 
 ## Honesty policy
 
-Every simplification is labeled inline where it applies, with the direction of its error where known. Current salary stands in for high-3 unless you set the salary-growth dial (a conservative floor). The buyback deposit is an estimate until you enter the DFAS figure — either way it's deducted from your savings, because it's real money. VA tables are approximate for 2026. State rates and cost-of-living indexes are coarse estimates. The lifespan figure is a statistical average, not a prediction. This is an estimate machine, not advice — and it says so.
+Every simplification is labeled inline where it applies, with the direction of its error where known. Current salary stands in for high-3 unless you set the salary-growth dial (a conservative floor). The buyback deposit is an estimate until you enter the DFAS figure — either way it's deducted from your savings, because it's real money. VA tables are the official 2026 rates, verified against va.gov. State rates and cost-of-living indexes are coarse estimates. The lifespan figure is a statistical average, not a prediction. This is an estimate machine, not advice — and it says so.
 
 The math is locked by **172 unit tests and a browser smoke suite**, including golden tests against published OPM computation examples, SSA's exact reduction/credit factors, the TSP match schedule, and the DFAS formula.
 
