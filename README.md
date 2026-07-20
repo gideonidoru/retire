@@ -33,7 +33,7 @@ A decisions chapter that answers the questions people actually argue about:
 - **Claim Social Security later?** — cumulative lifetime totals for 62 / FRA / 70 with the crossover ages, tied to your lifespan estimate.
 - **Buy back your military time?** — the net monthly effect (waiver included), the estimated deposit, and the break-even age. Shown while the decision is still open.
 - **Assumptions wrong?** — a stress test: inflation at 4%, growth halved, living to 100 — pass/fail against your goal.
-- **Retire somewhere else?** — all 50 states plus popular expat destinations (Portugal, Mexico, Costa Rica, Thailand…), ranked by what your after-tax income actually *spends like* — state taxes and cost of living together, military exemptions included.
+- **Retire somewhere else?** — all 50 states plus popular expat destinations (Portugal, Mexico, Costa Rica, Thailand…), ranked by what your after-tax income actually *spends like* — state taxes and cost of living together, military exemptions included. Abroad, the honest caveats travel with it: Medicare doesn't follow you, but a VA rating does (the Foreign Medical Program covers service-connected care worldwide).
 - **Leave federal service?** — the private-sector salary that breaks even on everything walking away forfeits: remaining accrual years, the match stream, the 1.1% upgrade on banked years, net of FERS withholding.
 - **One of you died first?** — both directions. If you go: what the survivor actually keeps — the FERS survivor annuity from your election, SBP if elected (with DIC stacking since the 2023 offset repeal), the Social Security step-up, their streams, the inherited draw — with the gap named. If they go: the widow's tax trap, quantified — nearly the same income refiled single, with the effective-rate jump shown.
 - **Converted to Roth in the gap?** — fill the 12/22/24% bracket in the years between retirement and Social Security, pay the tax cheap, shrink the RMDs. A directional sketch, labeled as such.
@@ -42,23 +42,23 @@ A decisions chapter that answers the questions people actually argue about:
 
 | Area | Depth |
 |---|---|
-| **FERS** | MRA by birth year; every eligibility path (62+5, 60+20, MRA+30, MRA+10 with exact reductions, deferred); special provisions (LEO/FF/ATC/CBP, 1.7%, immediate SRS); already-separated support (frozen service, deferred rules); the SRS on civilian years only; sick-leave credit incl. the 1.1% test (OPM BAL 18-103); survivor elections; the pre-62 COLA gap and diet COLA modeled in real terms |
-| **Military** | Receiving / will-retire / separated paths; High-3 (75% cap) and BRS; buyback with waiver math; per-state retired-pay tax exemptions |
-| **VA** | Ratings 10–100% with the full dependent matrix; tax-free everywhere it should be |
-| **Social Security** | FRA by birth year and SSA's exact claim factors; one number straight off your statement |
-| **TSP** | 2026 IRS limits with age-based catch-ups; %-of-salary, dollar, or max-every-year contributions; the real agency match formula; Roth share; RMDs at 73 (Uniform Lifetime Table); Rule of 55 / public-safety / SECURE 2.0 warnings |
-| **Taxes** | 2026 federal brackets, standard deduction incl. 65+, up-to-85% SS taxability, per-state treatment from a 50-state (+ abroad) data file, Medicare Part B with IRMAA tiers |
-| **Household** | A spouse's pension, Social Security (their own FRA and claim age), balance draws, and wages while working; joint taxes and IRMAA; the plan runs to the longer-lived of you |
+| **FERS** | MRA by birth year; every eligibility path (62+5, 60+20, MRA+30, MRA+10 with exact reductions, deferred by service — 30 years commences at the MRA, 20 at 60, else 62); VERA early-outs (immediate and unreduced, supplement held to the MRA, VSIP into savings); special provisions (LEO/FF/ATC/CBP, 1.7%, immediate SRS); already-separated support (frozen service, deferred rules); the SRS on civilian years only; sick-leave credit incl. the 1.1% test (OPM BAL 18-103); survivor elections; an optional real salary-growth dial that projects a true high-3; the pre-62 COLA gap and diet COLA modeled in real terms |
+| **Military** | Receiving / will-retire / separated paths; High-3 (75% cap) and BRS; buyback with waiver math and the deposit deducted from savings; CRDP at 50%+ and the sub-50% waiver (CRSC restore); per-state retired-pay tax exemptions |
+| **VA** | Ratings 10–100% with the full dependent matrix — or your award letter verbatim (SMC and combinations included); tax-free everywhere it should be |
+| **Social Security** | FRA by birth year and SSA's exact claim factors; one number straight off your statement, trimmed honestly if you stop earning early |
+| **TSP** | 2026 IRS limits with age-based catch-ups; %-of-salary, dollar, or max-every-year contributions; the real agency match formula; Roth share; draw start ages and one-time withdrawals; RMDs at 73 or 75 by birth year (SECURE 2.0, Uniform Lifetime Table); Rule of 55 / public-safety warnings with the 10% penalty in the after-tax math |
+| **Taxes** | 2026 federal brackets, standard deduction incl. 65+ (gap years correctly excluded), the 2025–28 OBBBA senior deduction with its phase-out, up-to-85% SS taxability, per-state treatment from a 50-state (+ abroad) data file, Medicare Part B with IRMAA tiers |
+| **Household** | A spouse's pension (deferred start supported), Social Security (their own FRA and claim age), balance draws with their own RMD forcing, and wages while working; joint taxes and IRMAA; the plan runs to the longer-lived of you |
 | **Survivor** | FERS survivor elections (valued from the unreduced annuity), SBP at 55% with its 6.5% premium charged while living, DIC, the SS step-up, inherited accounts |
 | **Disability** | FERS disability retirement: 60% year one, 40% minus the SSDI offset to 62, the earned-annuity floor, and the age-62 recompute with disability years credited |
 | **Health** | FEHB self / self+1 / family vs TRICARE (or both), premiums netted from income, with the FEHB 5-year rule flagged |
 | **Lifespan** | SSA life table by age and sex, income-adjusted; drives every horizon in the tool — for households, the longer-lived spouse sets it |
 
-All figures in **today's dollars** — growth assumptions are "above inflation," with one labeled line showing what the checks will nominally read in your retirement year. The assumptions behind everything (inflation, lifespan buffer, horizon, guaranteed-income discount rate) are exposed as **dials** you can turn.
+All figures in **today's dollars** — growth assumptions are "above inflation," with one labeled line showing what the checks will nominally read in your retirement year. The assumptions behind everything (inflation, lifespan buffer, horizon, guaranteed-income discount rate, career start, real salary growth) are exposed as **dials** you can turn.
 
 ## Honesty policy
 
-Every simplification is labeled inline where it applies, with the direction of its error where known. Current salary stands in for high-3 (a conservative floor). The buyback deposit is an estimate until you enter the DFAS figure. VA tables are approximate for 2026. State rates and cost-of-living indexes are coarse estimates. The lifespan figure is a statistical average, not a prediction. This is an estimate machine, not advice — and it says so.
+Every simplification is labeled inline where it applies, with the direction of its error where known. Current salary stands in for high-3 unless you set the salary-growth dial (a conservative floor). The buyback deposit is an estimate until you enter the DFAS figure — either way it's deducted from your savings, because it's real money. VA tables are approximate for 2026. State rates and cost-of-living indexes are coarse estimates. The lifespan figure is a statistical average, not a prediction. This is an estimate machine, not advice — and it says so.
 
 The math is locked by **172 unit tests and a browser smoke suite**, including golden tests against published OPM computation examples, SSA's exact reduction/credit factors, the TSP match schedule, and the DFAS formula.
 
