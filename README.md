@@ -60,7 +60,7 @@ All figures in **today's dollars** — growth assumptions are "above inflation,"
 
 Every simplification is labeled inline where it applies, with the direction of its error where known. Current salary stands in for high-3 (a conservative floor). The buyback deposit is an estimate until you enter the DFAS figure. VA tables are approximate for 2026. State rates and cost-of-living indexes are coarse estimates. The lifespan figure is a statistical average, not a prediction. This is an estimate machine, not advice — and it says so.
 
-The math is locked by **146 automated tests**, including golden tests against published OPM computation examples, SSA's exact reduction/credit factors, the TSP match schedule, and the DFAS formula.
+The math is locked by **167 automated tests**, including golden tests against published OPM computation examples, SSA's exact reduction/credit factors, the TSP match schedule, and the DFAS formula.
 
 ## Privacy
 
@@ -73,7 +73,7 @@ Vanilla JavaScript, no framework, no runtime dependencies. One state object → 
 ```
 npm install
 npm run dev      # local dev server
-npm test         # vitest — 146 tests; correctness is the product
+npm test         # vitest — 167 tests; correctness is the product
 npm run build    # dist/ → index.html + sw.js + manifest.webmanifest + README
 ```
 
